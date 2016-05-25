@@ -10,6 +10,8 @@ I want rules to specify the 98% case. `eslint-disable` will cover the rest. I ca
 
 **This project is compatible with `npm` version 3 only.** The goal is to make this a one-stop install for `eslint` and its plugins, but plugin name resolution for `eslint` is hardcoded to the top-level. Installing this with `npm` 3.x will ensure that. `npm` version 2, however, puts this project's dependences underneath it in the directory streucture, making them invisible to the larger project.
 
+This may change if there is progress on this issue: https://github.com/eslint/eslint/issues/3458
+
 _Note: if you have `eslint` or any eslint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
 
 ## Configurations in this project
@@ -28,7 +30,7 @@ To allow `eslint-plugin-import` to do its magic, you may need to tell it where t
 
 ```javascript
 {
-  settings:
+  settings: {
     'import/resolver': {
       node: {
         paths: [__dirname],
