@@ -2,8 +2,8 @@
 
 var _ = require('lodash');
 
-var start = require('./combined');
-var test = require('./test');
+var test = require('../test');
+var start = require('./_default');
 
 
 var combined = _.merge({}, start, test);

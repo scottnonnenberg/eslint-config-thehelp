@@ -17,7 +17,7 @@ _Note: if you have `eslint` or any eslint plugins installed yourself, they will 
 1. `core` - Basic good javascript practices. Node.js and CommonJS.
 2. `es2015` - Preferring ES2015 constructs over ES5 constructs. `import`/`export` instead of `module.exports`. Babel required.
 3. `functional` - Eliminating mutation of data and all loops, in favor of functional design.
-4. **default**/`combined` - the previous three combined into one configuration. Suitable for any node module or server project.
+4. **default** - the previous three combined into one configuration. Suitable for any node module or server project.
 5. `react` - rules for JSX and React component structure, as well as accessibility.
 6. `scripts` - a looser configuration appropriate for your project's `scripts/` directory. For example, allows use of `devDependencies`.
 7. `test` - a configuration appropriate for your projects `test/` directory, bringing in two new plugins, the `mocha` env, and relaxing a few rules. For example, turns off `immutable/no-let` to allow test setup in `before`/`beforeEach`.

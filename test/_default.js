@@ -2,9 +2,9 @@
 
 var _ = require('lodash');
 
-var core = require('./core');
-var es2015 = require('./es2015');
-var functional = require('./functional');
+var core = require('../core');
+var es2015 = require('../es2015');
+var functional = require('../functional');
 
 
 var combined = _.merge({}, core, es2015, functional);

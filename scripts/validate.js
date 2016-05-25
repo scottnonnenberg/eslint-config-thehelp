@@ -18,6 +18,8 @@ validate('es2015');
 validate('functional');
 validate('core');
 
-validate('combined');
-validate('_react_combined');
-validate('_test_combined');
+validate('default');
+
+validate('test/_default');
+validate('test/_react_combined');
+validate('test/_test_combined');

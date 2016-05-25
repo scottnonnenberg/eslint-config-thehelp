@@ -2,8 +2,8 @@
 
 var _ = require('lodash');
 
-var start = require('./combined');
-var react = require('./react');
+var react = require('../react');
+var start = require('./_default');
 
 
 var combined = _.merge({}, start, react);
