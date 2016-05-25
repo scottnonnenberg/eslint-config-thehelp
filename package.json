@@ -1,0 +1,39 @@
+{
+  "name": "eslint-config-thehelp",
+  "version": "0.1.1",
+  "description": "The way I write javascript.",
+  "main": "index.js",
+
+  "dependencies": {
+    "babel-eslint": "6.0.4",
+    "eslint": "2.9.0",
+    "eslint-plugin-bdd": "2.1.0",
+    "eslint-plugin-chai-expect": "1.1.1",
+    "eslint-plugin-immutable": "1.0.0",
+    "eslint-plugin-import": "1.8.0",
+    "eslint-plugin-jsx-a11y": "1.2.0",
+    "eslint-plugin-no-loops": "0.2.0",
+    "eslint-plugin-react": "5.1.1",
+    "eslint-plugin-security": "1.2.0",
+    "lodash": "4.x"
+  },
+  "devDependencies": {
+    "eslint-find-rules": "1.9.2"
+  },
+
+  "scripts": {
+    "test": "npm run lint && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test && npm run validate",
+
+    "lint": "eslint .",
+
+    "find-rules": "eslint-find-rules",
+    "find-missing-core": "npm run find-rules -- -u core.js",
+    "find-missing-default": "npm run find-rules -- -u index.js",
+    "find-missing-react": "npm run find-rules -- -u _react_combined.js",
+    "find-missing-test": "npm run find-rules -- -u _test_combined.js",
+
+    "validate": "node scripts/validate.js"
+  },
+  "author": "Scott Nonnenberg",
+  "license": "MIT"
+}
