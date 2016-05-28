@@ -46,7 +46,7 @@ Sadly, not all the rules in this project work well together.
 
 - `functional` + `react` - the `immutable/no-this` rule conflicts with traditional React component structure, pushing you to stateless components. However, the `react/prop-types` rule will conflict with the `immutable/no-mutation` rule since you have to modify the stateless component to add the `propTypes` key. I've filed a bug: https://github.com/jhusain/eslint-plugin-immutable/issues/14
 - `core` + `funtional` (without `es2015`) - you'll get an error for every modification of `module.exports`, even though that's the only way to export in CommonJS. This change will help: https://github.com/jhusain/eslint-plugin-immutable/pull/7
-- `core` + `test` (without `functional`) - `test` turns off `immutable/no-let`, and it won't be present in
+- `core` + `test` (without `functional`) - `test` turns off `immutable/no-let`, and the `immutable` plugin won't be installed. Either turn on `functional` (and make the necessary code changes) or copy the configuration provided by `test` and install it directly in your `test/.eslintrc.js`.
 
 ## My guidelines for this project:
 
