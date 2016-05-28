@@ -160,6 +160,7 @@ module.exports = {
     'no-process-env': 'error',
     'no-process-exit': 'error',
     'no-proto': 'error',
+    'no-prototype-builtins': 'error',
     'no-redeclare': 'error',
     'no-regex-spaces': 'error',
     'no-restricted-globals': 'off', // http://eslint.org/docs/rules/no-restricted-globals
@@ -206,6 +207,7 @@ module.exports = {
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
     'no-useless-escape': 'error',
+    'no-useless-rename': 'error',
     'no-var': 'off', // ES5
     'no-void': 'error',
     'no-warning-comments': ['error', {
@@ -251,6 +253,7 @@ module.exports = {
     'spaced-comment': 'error',
     'strict': 'error',
     'template-curly-spacing': 'error',
+    'unicode-bom': 'error',
     'use-isnan': 'error',
     'valid-jsdoc': 'error', // when I decide how to do docs
     'valid-typeof': 'error',
