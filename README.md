@@ -57,4 +57,7 @@ Sadly, not all the rules in this project work well together.
 - All 'off' rules must have a reason mentioned.
 - Configuration should be nothing but 'error' if it matches the default settings for the rule.
 
+## TODO
 
+- Make a note about 'consistent-return' which is incompatible with notate/breadcrumbs
+- Move to `eslint-plugin-immutable` fork with my PR and the other one for 'no-array-mutation'? Would make it much easier to use those settings. Would get rid of just about all exceptions in .com...
