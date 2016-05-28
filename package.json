@@ -4,6 +4,20 @@
   "description": "The way I write javascript.",
   "main": "index.js",
 
+  "scripts": {
+    "test": "npm run lint && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test && npm run validate",
+
+    "lint": "eslint .",
+
+    "find-rules": "eslint-find-rules",
+    "find-missing-core": "npm run find-rules -- -u core.js",
+    "find-missing-default": "npm run find-rules -- -u test/_default.js",
+    "find-missing-react": "npm run find-rules -- -u test/_react_combined.js",
+    "find-missing-test": "npm run find-rules -- -u test/_test_combined.js",
+
+    "validate": "node scripts/validate.js"
+  },
+
   "dependencies": {
     "eslint": "2.11.0",
     "eslint-plugin-bdd": "2.1.0",
@@ -20,19 +34,6 @@
     "lodash": "4.13.1"
   },
 
-  "scripts": {
-    "test": "npm run lint && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test && npm run validate",
-
-    "lint": "eslint .",
-
-    "find-rules": "eslint-find-rules",
-    "find-missing-core": "npm run find-rules -- -u core.js",
-    "find-missing-default": "npm run find-rules -- -u test/_default.js",
-    "find-missing-react": "npm run find-rules -- -u test/_react_combined.js",
-    "find-missing-test": "npm run find-rules -- -u test/_test_combined.js",
-
-    "validate": "node scripts/validate.js"
-  },
   "author": "Scott Nonnenberg",
   "license": "MIT"
 }
