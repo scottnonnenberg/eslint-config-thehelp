@@ -15,6 +15,7 @@ module.exports = {
     'no-magic-numbers': 'off',
     'no-unused-expressions': 'off',
     'no-sync': 'off',
+    'no-undefined': 'off',
 
     'bdd/focus': 'error',
     'bdd/exclude': 'error',
