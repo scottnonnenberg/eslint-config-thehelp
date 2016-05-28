@@ -102,11 +102,7 @@ module.exports = {
     'no-else-return': 'error',
     'no-empty': 'error',
     'no-empty-character-class': 'error',
-    'no-empty-function': ['error', {
-      allow: [
-        'arrowFunctions',
-      ],
-    }],
+    'no-empty-function': 'off', // ES5
     'no-empty-pattern': 'error',
     'no-eq-null': 'off', // this space already covered by eqeqeq
     'no-eval': 'error',

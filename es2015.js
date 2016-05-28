@@ -9,6 +9,11 @@ module.exports = {
 
   rules: {
     'func-names': 'error',
+    'no-empty-function': ['error', {
+      allow: [
+        'arrowFunctions',
+      ],
+    }],
     'no-var': 'error',
     'object-shorthand': 'error',
     'prefer-arrow-callback': ['error', {
