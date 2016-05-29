@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-thehelp",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "The way I write javascript.",
   "main": "index.js",
 
