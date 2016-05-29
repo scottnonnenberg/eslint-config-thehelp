@@ -61,3 +61,9 @@ Sadly, not all the rules in this project work well together.
 
 - Make a note about 'consistent-return' which is incompatible with notate/breadcrumbs
 - Move to `eslint-plugin-immutable` fork with my PR and the other one for 'no-array-mutation'? Would make it much easier to use those settings. Would get rid of just about all exceptions in .com...
+- Turn on these two rules when upgrading to the next version of eslint
+  'max-statements-per-line': 'off', // https://github.com/eslint/eslint/issues/6264
+  'no-useless-rename': 'off', // https://github.com/eslint/eslint/issues/6266
+- Upgrade eslint-plugin-imports when my PR is merged:
+  https://github.com/benmosher/eslint-plugin-import/pull/359/files
+  https://github.com/benmosher/eslint-plugin-import/issues/358
