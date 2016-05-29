@@ -71,7 +71,7 @@ module.exports = {
     'max-nested-callbacks': ['error', { max: 3 }],
     'max-params': 'error',
     'max-statements': ['error', { max: 12 }],
-    'max-statements-per-line': 'error',
+    'max-statements-per-line': 'off', // https://github.com/eslint/eslint/issues/6264
     'new-cap': 'error',
     'new-parens': 'error',
     'newline-after-var': 'off', // I'm not consistent enough on this
@@ -207,7 +207,7 @@ module.exports = {
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
     'no-useless-escape': 'error',
-    'no-useless-rename': 'error',
+    'no-useless-rename': 'off', // https://github.com/eslint/eslint/issues/6266
     'no-var': 'off', // ES5
     'no-void': 'error',
     'no-warning-comments': ['error', {
