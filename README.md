@@ -40,13 +40,15 @@ To allow `eslint-plugin-import` to do its magic, you may need to tell it where t
 }
 ```
 
-## Conflicts
+If using `react` config, you can get more precise deprecation warnings by setting your React version:
 
-Sadly, not all the rules in this project work well together.
-
-- `functional` + `react` - the `immutable/no-this` rule conflicts with traditional React component structure, pushing you to stateless components. However, the `react/prop-types` rule will conflict with the `immutable/no-mutation` rule since you have to modify the stateless component to add the `propTypes` key. I've filed a bug: https://github.com/jhusain/eslint-plugin-immutable/issues/14
-- `core` + `funtional` (without `es2015`) - you'll get an error for every modification of `module.exports`, even though that's the only way to export in CommonJS. This change will help: https://github.com/jhusain/eslint-plugin-immutable/pull/7
-- `core` + `test` (without `functional`) - `test` turns off `immutable/no-let`, and the `immutable` plugin won't be installed. Either turn on `functional` (and make the necessary code changes) or copy the configuration provided by `test` and install it directly in your `test/.eslintrc.js`.
+```javascript
+{
+  react: {
+    version: '15.0',
+  },
+}
+```
 
 ## My guidelines for this project:
 
@@ -57,13 +59,13 @@ Sadly, not all the rules in this project work well together.
 - All 'off' rules must have a reason mentioned.
 - Configuration should be nothing but 'error' if it matches the default settings for the rule.
 
-## TODO
+## Notes:
 
-- Make a note about 'consistent-return' which is incompatible with notate/breadcrumbs
-- Move to `eslint-plugin-immutable` fork with my PR and the other one for 'no-array-mutation'? Would make it much easier to use those settings. Would get rid of just about all exceptions in .com...
-- Turn on these two rules when upgrading to the next version of eslint
-  'max-statements-per-line': 'off', // https://github.com/eslint/eslint/issues/6264
-  'no-useless-rename': 'off', // https://github.com/eslint/eslint/issues/6266
-- Upgrade eslint-plugin-imports when my PR is merged:
-  https://github.com/benmosher/eslint-plugin-import/pull/359/files
-  https://github.com/benmosher/eslint-plugin-import/issues/358
+- `consistent-return` rule is incompatible with [thehelp-core](https://github.com/thehelp/core)'s breadcrumbs
+- I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default
+
+## TODO:
+
+- Re-enable 'no-useless-rename' when https://github.com/eslint/eslint/issues/6266 is fixed for `babel-eslint` as well
+- Update to new `imports` plugin when released, has fix for `prefer-default-export` bug: https://github.com/benmosher/eslint-plugin-import/blob/master/CHANGELOG.md
+- Add this to a new `pure` setting? https://github.com/purely-functional/eslint-plugin-pure/blob/master/docs/rules/pure.md
