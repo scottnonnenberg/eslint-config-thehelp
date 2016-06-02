@@ -72,7 +72,7 @@ module.exports = {
     'max-nested-callbacks': ['error', { max: 3 }],
     'max-params': 'error',
     'max-statements': ['error', { max: 12 }],
-    'max-statements-per-line': 'off', // https://github.com/eslint/eslint/issues/6264
+    'max-statements-per-line': 'error',
     'new-cap': 'error',
     'new-parens': 'error',
     'newline-after-var': 'off', // I'm not consistent enough on this
