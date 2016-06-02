@@ -19,6 +19,7 @@ module.exports = {
   plugins: [
     'import',
     'security',
+    'thehelp',
   ],
 
   rules: {
@@ -306,5 +307,9 @@ module.exports = {
     'security/detect-possible-timing-attacks': 'error',
     'security/detect-pseudoRandomBytes': 'error',
     'security/detect-unsafe-regex': 'error',
+
+    'thehelp/absolute-or-current-dir': 'off',
+    'thehelp/no-array-mutation': 'off',
+    'thehelp/no-mutation': 'off',
   },
 };
