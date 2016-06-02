@@ -16,13 +16,13 @@ _Note: if you have `eslint` or any eslint plugins installed yourself, they will 
 
 ## Configurations in this project
 
-1. `core` - Basic good javascript practices. Node.js and CommonJS.
-2. `es2015` - Preferring ES2015 constructs over ES5 constructs. `import`/`export` instead of `module.exports`. Babel required.
-3. `functional` - Eliminating mutation of data and all loops, in favor of functional design.
-4. **default** - the previous three combined into one configuration. Suitable for any node module or server project.
-5. `react` - rules for JSX and React component structure, as well as accessibility.
-6. `scripts` - a looser configuration appropriate for your project's `scripts/` directory. For example, allows use of `devDependencies`.
-7. `test` - a configuration appropriate for your projects `test/` directory, bringing in two new plugins, the `mocha` env, and relaxing a few rules. For example, turns off `immutable/no-let` to allow test setup in `before`/`beforeEach`.
+1. `thehelp/core` - Basic good javascript practices. Node.js and CommonJS.
+2. `thehelp/es2015` - Preferring ES2015 constructs over ES5 constructs. `import`/`export` instead of `module.exports`. Babel required.
+3. `thehelp/functional` - Eliminating mutation of data and all loops, in favor of functional design.
+4. `thehelp` (**default**) - the previous three combined into one configuration. Suitable for any node module or server project.
+5. `thehelp/react` - rules for JSX and React component structure, as well as accessibility.
+6. `thehelp/scripts` - a looser configuration appropriate for your project's `scripts/` directory. For example, allows use of `devDependencies`.
+7. `thehelp/test` - a configuration appropriate for your projects `test/` directory, bringing in two new plugins, the `mocha` env, and relaxing a few rules. For example, turns off `immutable/no-let` to allow test setup in `before`/`beforeEach`.
 
 ## Key configuration
 
@@ -66,6 +66,10 @@ If using `react` config, you can get more precise deprecation warnings by settin
 
 ## TODO:
 
-- Re-enable 'no-useless-rename' when https://github.com/eslint/eslint/issues/6266 is fixed for `babel-eslint` as well
+- Re-enable `no-useless-rename` when https://github.com/eslint/eslint/issues/6266 is fixed for `babel-eslint`
 - Update to new `imports` plugin when released, has fix for `prefer-default-export` bug: https://github.com/benmosher/eslint-plugin-import/blob/master/CHANGELOG.md
-- Add this to a new `pure` setting? https://github.com/purely-functional/eslint-plugin-pure/blob/master/docs/rules/pure.md
+- new `pure` configuration?
+  - `pure/pure` - https://github.com/purely-functional/eslint-plugin-pure
+  - new rule(s): check for lodash mutating functions
+  - new rule: check for `assign()` with something other than `{}` first parameter
+  - `better/no-delete` - https://github.com/idmitriev/eslint-plugin-better
