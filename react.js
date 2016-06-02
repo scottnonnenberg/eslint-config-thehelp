@@ -7,12 +7,6 @@ module.exports = {
     browser: true,
   },
 
-  settings: {
-    react: {
-      version: '15.0',
-    },
-  },
-
   plugins: [
     'jsx-a11y',
     'react',
