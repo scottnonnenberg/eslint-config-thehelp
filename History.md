@@ -1,3 +1,12 @@
+## 0.4.0 (2016-06-02)
+
+* `thehelp/no-mutation` and `thehelp/no-array-mutation` both added for `functional` configuration, and `immutable/no-mutation` is turned off
+* `thehelp/absolute-or-current-dir` is off by default
+* add `thehelp` plugin, with three new rules
+* update to `eslint` 2.11.1, re-enable `max-statements-per-line`
+* remove React version setting from `react` configuration
+* update to `jsx-a11y` 1.2.3
+
 ## 0.3.2 (2016-05-28)
 
 # Revert `import` plugin to 1.8.0 due to outstanding issue: https://github.com/benmosher/eslint-plugin-import/issues/358
