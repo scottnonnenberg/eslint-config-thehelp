@@ -1,0 +1,19 @@
+{
+  "folders":
+  [
+    {
+      "path": ".",
+      "folder_exclude_patterns": [
+        "assets",
+        "node_modules",
+        "public",
+        "coverage",
+        "dist",
+        "docs",
+      ],
+      "file_exclude_patterns": [
+        ".DS_Store"
+      ]
+    }
+  ]
+}
