@@ -1,3 +1,7 @@
+## 0.4.1 (2016-06-03)
+
+* update to `thehelp` 0.3.2. It properly handles `{ object: 'this' }` exceptions now.
+
 ## 0.4.0 (2016-06-02)
 
 * `thehelp/no-mutation` and `thehelp/no-array-mutation` both added for `functional` configuration, and `immutable/no-mutation` is turned off
