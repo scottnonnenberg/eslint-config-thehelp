@@ -1,18 +1,36 @@
 # eslint-config-thehelp
 
-Because the tools can help us write better code. :0)
+Because the tools can help us write better code. Use this package directly, or fork it and make it your own! :0)
 
 ## My principles for rules
 
 I want rules to specify the 98% case. `eslint-disable` will cover the rest. I can periodically search for those exceptions and reconsider their justification.
 
-## Compatibility
+Details:
+- All rules from all plugins must be included. This is easy with `npm` scripts using `eslint-find-rules`.
+- Rules are in alphabetical order: first core `eslint` rules, then plugins sorted by name.
+- Always use 'error' or 'off' instead of 0 and 2. Numbers are for real config values.
+- No warnings. either disallow it completely, or don't worry about it.
+- All 'off' rules must have a reason mentioned.
+- Configuration should be nothing but 'error' if it matches the default settings for the rule.
 
-**This project is compatible with `npm` version 3 only.** The goal is to make this a one-stop install for `eslint` and its plugins, but plugin name resolution for `eslint` is hardcoded to the top-level. Installing this with `npm` 3.x will ensure that. `npm` version 2, however, puts this project's dependences underneath it in the directory streucture, making them invisible to the larger project.
+## Quickstart
 
-This may change if there is progress on this issue: https://github.com/eslint/eslint/issues/3458
+```bash
+npm install eslint-config-thehelp --save-dev
+```
 
-_Note: if you have `eslint` or any eslint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
+In your eslint config (I prever `.eslintrc.js`), extend this project's default configuration:
+
+```javascript
+{
+  extends: [
+    'thehelp',
+  ],
+}
+```
+
+As always, you can override any settings provided in this package in your configuration's `rules` object.
 
 ## Configurations in this project
 
@@ -50,19 +68,18 @@ If using `react` config, you can get more precise deprecation warnings by settin
 }
 ```
 
-## My guidelines for this project:
+## Compatibility
 
-- All rules from all plugins must be included. This is easy with `npm` scripts using `eslint-find-rules`.
-- Rules are in alphabetical order: first core eslint rules, then plugins sorted by name.
-- Always use 'error' or 'off' instead of 0 and 2. Numbers are for real config values.
-- No warnings. either disallow it completely, or don't worry about it.
-- All 'off' rules must have a reason mentioned.
-- Configuration should be nothing but 'error' if it matches the default settings for the rule.
+**This project is compatible with `npm` version 3 only.** The goal is to make this a one-stop install for `eslint` and its plugins, but plugin name resolution for `eslint` is hardcoded to the top-level. Installing this with `npm` 3.x will ensure that. `npm` version 2, however, puts this project's dependences underneath it in the directory streucture, making them invisible to the larger project.
 
-## Notes:
+This may change if there is progress on this issue: https://github.com/eslint/eslint/issues/3458
+
+_Note: if you have `eslint` or any eslint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
+
+## Other notes:
 
 - `consistent-return` rule is incompatible with [thehelp-core](https://github.com/thehelp/core)'s breadcrumbs
-- I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default
+- I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default but I do recommend it.
 
 ## TODO:
 
