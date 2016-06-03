@@ -17,7 +17,7 @@
 
 ## 0.3.2 (2016-05-28)
 
-# Revert `import` plugin to 1.8.0 due to outstanding issue: https://github.com/benmosher/eslint-plugin-import/issues/358
+* Revert `import` plugin to 1.8.0 due to outstanding issue: https://github.com/benmosher/eslint-plugin-import/issues/358
 
 ## 0.3.1 (2016-05-28)
 
