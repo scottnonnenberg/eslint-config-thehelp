@@ -34,8 +34,8 @@ As always, you can override any settings provided in this package in your config
 
 ## Configurations in this project
 
-1. `thehelp/core` - Basic good javascript practices. Node.js and CommonJS.
-2. `thehelp/es2015` - Preferring ES2015 constructs over ES5 constructs. `import`/`export` instead of `module.exports`. Babel required.
+1. `thehelp/core` - Basic good javascript practices. Node.js and CommonJS. _Note: does not prevent the use of ES2015 constructs._
+2. `thehelp/es2015` - Preferring ES2015 constructs over ES5 constructs. `import`/`export` instead of `module.exports`. Will run on on Node.js 6.x without a separate compile step if `export`/`import` are not used (turn off `import/no-commonjs`). Otherwise Babel is required. You'll definitely need Babel for the browser.
 3. `thehelp/functional` - Eliminating mutation of data and all loops, in favor of functional design.
 4. `thehelp` (**default**) - the previous three combined into one configuration. Suitable for any node module or server project.
 5. `thehelp/react` - rules for JSX and React component structure, as well as accessibility.
