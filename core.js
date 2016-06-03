@@ -1,6 +1,6 @@
-'use strict';
-
 /* eslint-disable no-inline-comments, no-magic-numbers */
+
+'use strict';
 
 module.exports = {
   env: {

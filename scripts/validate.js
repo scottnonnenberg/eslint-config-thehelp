@@ -1,6 +1,6 @@
-'use strict';
-
 /* eslint-disable global-require, security/detect-non-literal-require */
+
+'use strict';
 
 var validator = require('eslint/lib/config/config-validator');
 
