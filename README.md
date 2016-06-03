@@ -7,6 +7,7 @@ Because the tools can help us write better code. Use this package directly, or f
 I want rules to specify the 98% case. `eslint-disable` will cover the rest. I can periodically search for those exceptions and reconsider their justification.
 
 Details:
+
 - All rules from all plugins must be included. This is easy with `npm` scripts using `eslint-find-rules`.
 - Rules are in alphabetical order: first core `eslint` rules, then plugins sorted by name.
 - Always use 'error' or 'off' instead of 0 and 2. Numbers are for real config values.
