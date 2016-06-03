@@ -73,3 +73,4 @@ If using `react` config, you can get more precise deprecation warnings by settin
   - new rule(s): check for lodash mutating functions
   - new rule: check for `assign()` with something other than `{}` first parameter
   - `better/no-delete` - https://github.com/idmitriev/eslint-plugin-better
+- `thehelp/no-array-mutation` fires for `reverse()` in lodash chain context. Though, to be fair, `_.reverse()` does mutate the underlying array. Also interesting that `router.push()` fires it.
