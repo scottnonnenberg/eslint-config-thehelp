@@ -131,10 +131,10 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
-    'no-magic-numbers': ['error', {
+    'no-magic-numbers': ['error', { // this matches up with config in es2015
       ignore: [-2, -1, 0, 1, 2],
       ignoreArrayIndexes: true,
-      enforceConst: true,
+      enforceConst: false,
       detectObjects: false,
     }],
     'no-mixed-requires': 'error',

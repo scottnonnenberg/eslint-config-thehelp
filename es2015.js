@@ -1,3 +1,5 @@
+/* eslint-disable no-inline-comments */
+
 'use strict';
 
 module.exports = {
@@ -21,6 +23,12 @@ module.exports = {
       allow: [
         'arrowFunctions',
       ],
+    }],
+    'no-magic-numbers': ['error', { // this matches up with config in core
+      ignore: [-2, -1, 0, 1, 2],
+      ignoreArrayIndexes: true,
+      enforceConst: true,
+      detectObjects: false,
     }],
     'no-var': 'error',
     'object-shorthand': 'error',
