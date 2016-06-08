@@ -1,3 +1,7 @@
+## 0.5.0 (2016-06-07)
+
+* Add `eslint-plugin-filenames` to project, turn on `match-regex` for `snake_case.js` filenames, keep the other two rules off for now.
+
 ## 0.4.2 (2016-06-03)
 
 * Turn off `enforceConst` for `no-magic-numbers` rule in `core` config, re-enable in `es2015` config
