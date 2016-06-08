@@ -3,14 +3,14 @@
 var _ = require('lodash');
 
 var react = require('../react');
-var start = require('./_default');
+var start = require('./index_combined');
 
 
 var combined = _.merge({}, start, react);
 var plugins = start.plugins.concat(react.plugins);
 
-var pluginsFixed = _.assign({}, combined, {
+var reactCombined = _.assign({}, combined, {
   plugins: plugins,
 });
 
-module.exports = pluginsFixed;
+module.exports = reactCombined;

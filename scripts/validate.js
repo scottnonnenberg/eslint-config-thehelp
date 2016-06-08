@@ -20,6 +20,6 @@ validate('core');
 
 validate('default');
 
-validate('test/_default');
-validate('test/_react_combined');
-validate('test/_test_combined');
+validate('test/index_combined');
+validate('test/react_combined');
+validate('test/test_combined');

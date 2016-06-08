@@ -11,9 +11,9 @@
 
     "find-rules": "eslint-find-rules",
     "find-missing-core": "npm run find-rules -- -u core.js",
-    "find-missing-default": "npm run find-rules -- -u test/_default.js",
-    "find-missing-react": "npm run find-rules -- -u test/_react_combined.js",
-    "find-missing-test": "npm run find-rules -- -u test/_test_combined.js",
+    "find-missing-default": "npm run find-rules -- -u test/index_combined.js",
+    "find-missing-react": "npm run find-rules -- -u test/react_combined.js",
+    "find-missing-test": "npm run find-rules -- -u test/test_combined.js",
 
     "validate": "node scripts/validate.js"
   },
