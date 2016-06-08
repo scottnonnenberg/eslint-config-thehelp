@@ -17,6 +17,7 @@ module.exports = {
   },
 
   plugins: [
+    'filenames',
     'import',
     'security',
     'thehelp',
@@ -263,6 +264,12 @@ module.exports = {
     'wrap-regex': 'error',
     'yield-star-spacing': 'error',
     'yoda': 'error',
+
+    'filenames/match-exported': ['off', { // will re-enable this when PR is accepted
+      transform: 'snake',
+    }],
+    'filenames/match-regex': ['error', /^[a-z0-9_]+$/],
+    'filenames/no-index': 'off',
 
     'import/default': 'error',
     'import/no-commonjs': 'off', // ES5

@@ -22,6 +22,7 @@
     "eslint": "2.11.1",
     "eslint-plugin-bdd": "2.1.0",
     "eslint-plugin-chai-expect": "1.1.1",
+    "eslint-plugin-filenames": "1.0.0",
     "eslint-plugin-immutable": "1.0.0",
     "eslint-plugin-import": "1.8.0",
     "eslint-plugin-jsx-a11y": "1.2.3",

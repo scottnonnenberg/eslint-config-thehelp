@@ -85,6 +85,7 @@ _Note: if you have `eslint` or any eslint plugins installed yourself, they will 
 ## TODO:
 
 - Re-enable `no-useless-rename` when https://github.com/eslint/eslint/issues/6266 is fixed for `babel-eslint`
+- Turn on `filenames/match-exports` as soon as a build is released with this PR: https://github.com/selaux/eslint-plugin-filenames/pull/9
 - Update to new `imports` plugin when released, has fix for `prefer-default-export` bug: https://github.com/benmosher/eslint-plugin-import/blob/master/CHANGELOG.md
 - new `pure` configuration?
   - `pure/pure` - https://github.com/purely-functional/eslint-plugin-pure
