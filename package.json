@@ -29,7 +29,7 @@
     "eslint-plugin-no-loops": "0.2.0",
     "eslint-plugin-react": "5.1.1",
     "eslint-plugin-security": "1.2.0",
-    "eslint-plugin-thehelp": "0.3.2"
+    "@scottnonnenberg/eslint-plugin-thehelp": "0.3.2"
   },
   "devDependencies": {
     "eslint-find-rules": "1.9.2",

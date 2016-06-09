@@ -20,7 +20,7 @@ module.exports = {
     'filenames',
     'import',
     'security',
-    'thehelp',
+    '@scottnonnenberg/thehelp',
   ],
 
   rules: {
