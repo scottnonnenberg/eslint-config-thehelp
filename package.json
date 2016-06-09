@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-thehelp",
+  "name": "@scottnonnenberg/eslint-config-thehelp",
   "version": "0.5.0",
   "description": "The way I write javascript.",
   "main": "index.js",
