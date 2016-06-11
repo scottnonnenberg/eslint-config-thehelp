@@ -5,7 +5,7 @@
   "main": "index.js",
 
   "scripts": {
-    "test": "npm run lint && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test && npm run validate",
+    "test": "npm run lint && npm run validate && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test",
 
     "lint": "eslint .",
 
@@ -32,7 +32,7 @@
     "@scottnonnenberg/eslint-plugin-thehelp": "0.3.2"
   },
   "devDependencies": {
-    "eslint-find-rules": "1.9.2",
+    "eslint-find-rules": "1.10.0",
     "lodash": "4.13.1"
   },
 
