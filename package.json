@@ -4,6 +4,7 @@
   "description": "The way I write javascript.",
   "main": "index.js",
   "scripts": {
+    "release": "standard-version",
     "test": "npm run lint && npm run validate && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test",
     "lint": "eslint .",
     "find-rules": "eslint-find-rules",
@@ -30,6 +31,7 @@
     "eslint-find-rules": "1.10.0",
     "ghooks": "1.2.3",
     "lodash": "4.13.1",
+    "standard-version": "2.3.0",
     "validate-commit-msg": "2.6.1"
   },
   "config": {
