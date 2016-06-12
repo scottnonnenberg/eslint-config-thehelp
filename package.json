@@ -3,21 +3,16 @@
   "version": "0.5.0",
   "description": "The way I write javascript.",
   "main": "index.js",
-
   "scripts": {
     "test": "npm run lint && npm run validate && npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test",
-
     "lint": "eslint .",
-
     "find-rules": "eslint-find-rules",
     "find-missing-core": "npm run find-rules -- -u core.js",
     "find-missing-default": "npm run find-rules -- -u test/index_combined.js",
     "find-missing-react": "npm run find-rules -- -u test/react_combined.js",
     "find-missing-test": "npm run find-rules -- -u test/test_combined.js",
-
     "validate": "node scripts/validate.js"
   },
-
   "dependencies": {
     "eslint": "2.11.1",
     "eslint-plugin-bdd": "2.1.0",
@@ -33,9 +28,18 @@
   },
   "devDependencies": {
     "eslint-find-rules": "1.10.0",
-    "lodash": "4.13.1"
+    "ghooks": "1.2.3",
+    "lodash": "4.13.1",
+    "validate-commit-msg": "2.6.1"
   },
-
+  "config": {
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "maxSubjectLength": 72
+    }
+  },
   "author": "Scott Nonnenberg",
   "license": "MIT"
 }
