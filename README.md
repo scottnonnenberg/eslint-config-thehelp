@@ -23,14 +23,14 @@ Details for this project:
 npm install @scottnonnenberg/eslint-config-thehelp --save-dev
 ```
 
-In your eslint config (I prever `.eslintrc.js`), extend this project's default configuration:
+In your [ESLint](http://eslint.org/) config (I prever `.eslintrc.js`), extend this project's default configuration:
 
 ```javascript
-{
+module.exports = {
   extends: [
     '@scottnonnenberg/thehelp',
   ],
-}
+};
 ```
 
 As always, you can override any settings provided in this package in your configuration's `rules` object.
@@ -77,11 +77,11 @@ If using `react` config, you can get more precise deprecation warnings by settin
 
 This may change if there is progress on this issue: https://github.com/eslint/eslint/issues/3458
 
-_Note: if you have `eslint` or any eslint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
+_Note: if you have ESLint or any ESLint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
 
 ## Other notes:
 
-- `consistent-return` rule is incompatible with [thehelp-core](https://github.com/thehelp/core)'s breadcrumbs
+- `consistent-return` rule is incompatible with [`thehelp-core`](https://github.com/thehelp/core)'s breadcrumbs
 - I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default but I do recommend it.
 
 ## TODO:
