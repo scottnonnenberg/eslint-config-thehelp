@@ -42,6 +42,17 @@
       "maxSubjectLength": 72
     }
   },
-  "author": "Scott Nonnenberg",
-  "license": "MIT"
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "thehelp",
+    "functional"
+  ],
+  "author": "Scott Nonnenberg <scott@nonnenberg.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/scottnonnenberg/eslint-config-thehelp",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:scottnonnenberg/eslint-config-thehelp.git"
+  }
 }
