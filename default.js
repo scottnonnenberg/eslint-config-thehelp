@@ -2,8 +2,8 @@
 
 module.exports = {
   extends: [
-    'thehelp/core',
-    'thehelp/es2015',
-    'thehelp/functional',
+    '@scottnonnenberg/thehelp/core',
+    '@scottnonnenberg/thehelp/es2015',
+    '@scottnonnenberg/thehelp/functional',
   ],
 };
