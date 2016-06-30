@@ -2,6 +2,8 @@
 
 Because the tools can help us write better code. Use this package directly, or fork it and make it your own! :0)
 
+Blog post announcing this project: https://blog.scottnonnenberg.com/eslint-part-1-exploration/
+
 ## My principles for rules
 
 I want rules to specify the 98% case. `/* eslint-disable [rules] */` and `// eslint-disable-line` will cover the rest. I can periodically search for those exceptions and reconsider their justification.
