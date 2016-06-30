@@ -83,7 +83,7 @@ _Note: if you have ESLint or any ESLint plugins installed yourself, they will su
 
 ## Other notes:
 
-- `consistent-return` rule is incompatible with [`thehelp-core`](https://github.com/thehelp/core)'s breadcrumbs
+- `consistent-return` rule is incompatible with [`@scottnonnenberg/notate`](https://github.com/scottnonnenberg/notate) and [`thehelp-core`](https://github.com/thehelp/core)'s breadcrumbs
 - I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default but I do recommend it.
 
 ## TODO:
