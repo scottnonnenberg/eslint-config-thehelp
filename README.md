@@ -86,6 +86,12 @@ _Note: if you have ESLint or any ESLint plugins installed yourself, they will su
 - `consistent-return` rule is incompatible with [`@scottnonnenberg/notate`](https://github.com/scottnonnenberg/notate) and [`thehelp-core`](https://github.com/thehelp/core)'s breadcrumbs
 - I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default but I do recommend it.
 
+## Contributing
+
+This project uses [`standard-version`](https://github.com/conventional-changelog/standard-version) to release new versions, automatically updating the version number and [changelog](https://github.com/scottnonnenberg/eslint-config-thehelp/blob/master/CHANGELOG.md) based on commit messages in [standard format](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md). [`ghooks`](https://github.com/gtramontina/ghooks) and [`validate-commit-msg`](https://github.com/kentcdodds/validate-commit-msg) are used to ensure all commit messages match the expected format (see [package.json](https://github.com/scottnonnenberg/eslint-config-thehelp/blob/master/package.json) for the configuration details).
+
+It takes some getting used to, but this configuration is absolutely worthwhile. A changelog is way easier to understand than the chaos of a raw commit stream, especially with `standard-version` providing direct links to bugs, commits and [commit ranges](https://github.com/scottnonnenberg/eslint-config-thehelp/compare/v0.6.0...v0.6.1).
+
 ## TODO:
 
 - Re-enable `no-useless-rename` when https://github.com/eslint/eslint/issues/6266 is fixed for `babel-eslint`
