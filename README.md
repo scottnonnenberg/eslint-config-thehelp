@@ -4,20 +4,7 @@ Because the tools can help us write better code. Use this package directly, or f
 
 Blog post announcing this project: https://blog.scottnonnenberg.com/eslint-part-1-exploration/
 
-## My principles for rules
-
-I want rules to specify the 98% case. `/* eslint-disable [rules] */` and `// eslint-disable-line` will cover the rest. I can periodically search for those exceptions and reconsider their justification.
-
-Next, I believe strongly that all style mandates for a project should have automated tools which verify them. I’ve spent way, way too long talking about style in pull request reviews. Yes, some things can't be verified very easily in an automated fashion. Get creative to implement new verification schemes (write an ESLint plugin!). If you still can't do that, then make as few as possible of these kinds of manual requirements.
-
-Details for this project:
-
-- All rules from all plugins must be included. This is easy with `npm` scripts using `eslint-find-rules`.
-- Rules are in alphabetical order: first core `eslint` rules, then plugins sorted by name.
-- Always use 'error' or 'off' instead of 0 and 2. Numbers are for real config values.
-- No warnings. either disallow it completely, or don't worry about it.
-- All 'off' rules must have a reason mentioned.
-- Configuration should be nothing but 'error' if it matches the default settings for the rule.
+[![continous integration](https://img.shields.io/circleci/project/scottnonnenberg/eslint-config-thehelp/master.svg?maxAge=3600)](https://circleci.com/gh/scottnonnenberg/eslint-config-thehelp/tree/master) [![npm version](https://img.shields.io/npm/v/@scottnonnenberg/eslint-config-thehelp.svg?maxAge=3600)](https://www.npmjs.com/package/@scottnonnenberg/eslint-config-thehelp) [![license](https://img.shields.io/github/license/scottnonnenberg/eslint-config-thehelp.svg?maxAge=2592000)](https://github.com/scottnonnenberg/eslint-config-thehelp#license)
 
 ## Quickstart
 
@@ -80,6 +67,21 @@ If using `react` config, you can get more precise deprecation warnings by settin
 This may change if there is progress on this issue: https://github.com/eslint/eslint/issues/3458
 
 _Note: if you have ESLint or any ESLint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
+
+## My principles for rules
+
+I want rules to specify the 98% case. `/* eslint-disable [rules] */` and `// eslint-disable-line` will cover the rest. I can periodically search for those exceptions and reconsider their justification.
+
+Next, I believe strongly that all style mandates for a project should have automated tools which verify them. I’ve spent way, way too long talking about style in pull request reviews. Yes, some things can't be verified very easily in an automated fashion. Get creative to implement new verification schemes (write an ESLint plugin!). If you still can't do that, then make as few as possible of these kinds of manual requirements.
+
+Details for this project:
+
+- All rules from all plugins must be included. This is easy with `npm` scripts using `eslint-find-rules`.
+- Rules are in alphabetical order: first core `eslint` rules, then plugins sorted by name.
+- Always use 'error' or 'off' instead of 0 and 2. Numbers are for real config values.
+- No warnings. either disallow it completely, or don't worry about it.
+- All 'off' rules must have a reason mentioned.
+- Configuration should be nothing but 'error' if it matches the default settings for the rule.
 
 ## Other notes:
 
