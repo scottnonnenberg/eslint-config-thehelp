@@ -297,7 +297,8 @@ module.exports = {
     // documented default is not correct, specifying manually
     // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md#options
     'import/order': ['error', {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+      'groups': ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+      'newlines-between': 'always',
     }],
     'import/prefer-default-export': 'error',
 
