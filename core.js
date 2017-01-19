@@ -158,7 +158,7 @@ module.exports = {
     'no-octal-escape': 'error',
     'no-param-reassign': 'off', // options = options || {} is useful
     'no-path-concat': 'error',
-    'no-plusplus': 'error',
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'no-process-env': 'error',
     'no-process-exit': 'error',
     'no-proto': 'error',
