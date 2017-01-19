@@ -12,7 +12,8 @@
     "find-missing-default": "npm run find-rules -- -u test/index_combined.js",
     "find-missing-react": "npm run find-rules -- -u test/react_combined.js",
     "find-missing-test": "npm run find-rules -- -u test/test_combined.js",
-    "validate": "node scripts/validate.js"
+    "validate": "node scripts/validate.js",
+    "commitmsg": "validate-commit-msg"
   },
   "dependencies": {
     "eslint": "2.11.1",
@@ -29,15 +30,12 @@
   },
   "devDependencies": {
     "eslint-find-rules": "1.10.0",
-    "ghooks": "1.2.3",
+    "husky": "0.12.0",
     "lodash": "4.13.1",
     "standard-version": "2.3.0",
     "validate-commit-msg": "2.6.1"
   },
   "config": {
-    "ghooks": {
-      "commit-msg": "validate-commit-msg"
-    },
     "validate-commit-msg": {
       "maxSubjectLength": 72
     }
