@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/scottnonnenberg/eslint-config-thehelp/compare/v0.7.0...v0.8.0) (2017-02-17)
+
+
+### Features
+
+* **scripts:** Allow the usage of `process.env` with scripts preset ([e27c2f2](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/e27c2f2))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/scottnonnenberg/eslint-config-thehelp/compare/v0.6.1...v0.7.0) (2017-01-20)
 
