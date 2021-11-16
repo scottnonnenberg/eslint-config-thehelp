@@ -66,10 +66,7 @@ module.exports = {
     'linebreak-style': 'error',
     'lines-around-comment': 'off', // too restricting; conflicts with eslint-disable
     'max-depth': ['error', { max: 3 }],
-    'max-len': ['error', 90, 2, {
-      ignoreUrls: true,
-      ignoreComments: true,
-    }],
+    'max-len': ['error', 90, 2, { ignoreUrls: true, ignoreComments: true, }],
     'max-nested-callbacks': ['error', { max: 3 }],
     'max-params': 'error',
     'max-statements': ['error', { max: 12 }],
@@ -132,12 +129,7 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
-    'no-magic-numbers': ['error', { // this matches up with config in es2015
-      ignore: [-2, -1, 0, 1, 2],
-      ignoreArrayIndexes: true,
-      enforceConst: false,
-      detectObjects: false,
-    }],
+    'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: false, detectObjects: false, }], // this matches up with config in es2015
     'no-mixed-requires': 'error',
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-spaces': 'error',
@@ -168,21 +160,13 @@ module.exports = {
     'no-restricted-globals': 'off', // http://eslint.org/docs/rules/no-restricted-globals
     'no-restricted-imports': 'off', // http://eslint.org/docs/rules/no-restricted-imports
     'no-restricted-modules': 'off', // http://eslint.org/docs/rules/no-restricted-modules
-    'no-restricted-syntax': [
-      'error',
-      'DebuggerStatement',
-      'ForInStatement',
-      'LabeledStatement',
-      'WithStatement',
-    ],
+    'no-restricted-syntax': [ 'error', 'DebuggerStatement', 'ForInStatement', 'LabeledStatement', 'WithStatement', ],
     'no-return-assign': 'error',
     'no-script-url': 'error',
     'no-self-assign': 'error',
     'no-self-compare': 'error',
     'no-sequences': 'error',
-    'no-shadow': ['error', {
-      allow: ['err'],
-    }],
+    'no-shadow': ['error', { allow: ['err'], }],
     'no-shadow-restricted-names': 'error',
     'no-spaced-func': 'error',
     'no-sparse-arrays': 'error',
@@ -212,10 +196,7 @@ module.exports = {
     'no-useless-rename': 'off', // https://github.com/eslint/eslint/issues/6266
     'no-var': 'off', // ES5
     'no-void': 'error',
-    'no-warning-comments': ['error', {
-      terms: ['todo'],
-      location: 'start',
-    }],
+    'no-warning-comments': ['error', { terms: ['todo'], location: 'start', }],
     'no-whitespace-before-property': 'error',
     'no-with': 'error',
     'object-curly-spacing': ['error', 'always'],
@@ -224,11 +205,7 @@ module.exports = {
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': 'error',
     'operator-assignment': 'error',
-    'operator-linebreak': ['error', 'before', {
-      overrides: {
-        '=': 'after',
-      },
-    }],
+    'operator-linebreak': ['error', 'before', { overrides: { '=': 'after', }, }],
     'padded-blocks': ['error', 'never'],
     'prefer-arrow-callback': 'off', // ES6
     'prefer-const': 'error',
@@ -237,9 +214,7 @@ module.exports = {
     'prefer-spread': 'off', // ES5
     'prefer-template': 'off', // ES5
     'quote-props': ['error', 'consistent-as-needed'],
-    'quotes': ['error', 'single', {
-      avoidEscape: true,
-    }],
+    'quotes': ['error', 'single', { avoidEscape: true, }],
     'radix': 'error',
     'require-jsdoc': 'off', // when I decide how to do docs
     'require-yield': 'error',
@@ -265,27 +240,20 @@ module.exports = {
     'yield-star-spacing': 'error',
     'yoda': 'error',
 
-    'filenames/match-exported': ['off', { // will re-enable this when PR is accepted
-      transform: 'snake',
-    }],
+    'filenames/match-exported': ['off', {  transform: 'snake', }], // will re-enable this when PR is accepted
     'filenames/match-regex': ['error', /^[a-z0-9_]+$/],
     'filenames/no-index': 'off',
 
     'import/default': 'error',
     'import/no-commonjs': 'off', // ES5
     'import/export': 'error',
-    'import/extensions': ['error', {
-      json: 'always',
-      js: 'never',
-    }],
+    'import/extensions': ['error', { json: 'always', js: 'never', }],
     'import/imports-first': 'error',
     'import/named': 'error',
     'import/namespace': 'error',
     'import/newline-after-import': 'off', // breaks for require() https://github.com/benmosher/eslint-plugin-import/pull/326
     'import/no-amd': 'error',
-    // I don't use jsdoc right now, and this rule still under active development
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
-    'import/no-deprecated': 'off',
+    'import/no-deprecated': 'off', // I don't use jsdoc right now, and this rule still under active development
     'import/no-duplicates': 'error',
     'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
     'import/no-mutable-exports': 'error',
@@ -294,11 +262,7 @@ module.exports = {
     'import/no-namespace': 'error',
     'import/no-nodejs-modules': 'off', // We're definitely using the builtins
     'import/no-unresolved': ['error', { commonjs: true }],
-    // documented default is not correct, specifying manually
-    // https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md#options
-    'import/order': ['error', {
-      groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-    }],
+    'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'], }], // documented default is not correct, specifying manually
     'import/prefer-default-export': 'error',
 
     'security/detect-buffer-noassert': 'error',
