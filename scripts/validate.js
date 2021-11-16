@@ -2,7 +2,7 @@
 
 'use strict';
 
-var validator = require('eslint/lib/config/config-validator');
+var validator = require('../node_modules/eslint/lib/shared/config-validator');
 
 function validate(name) {
   console.log('validating ' + name + '...');
