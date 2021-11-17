@@ -279,8 +279,8 @@ module.exports = {
     'security/detect-pseudoRandomBytes': 'error',
     'security/detect-unsafe-regex': 'error',
 
-    'thehelp/absolute-or-current-dir': 'off',
-    'thehelp/no-array-mutation': 'off',
-    'thehelp/no-mutation': 'off',
+    '@scottnonnenberg/thehelp/absolute-or-current-dir': 'off',
+    '@scottnonnenberg/thehelp/no-array-mutation': 'off',
+    '@scottnonnenberg/thehelp/no-mutation': 'off',
   },
 };
