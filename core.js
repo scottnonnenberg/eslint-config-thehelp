@@ -1,4 +1,4 @@
-/* eslint-disable no-inline-comments, no-magic-numbers */
+/* eslint-disable no-inline-comments, no-magic-numbers, sort-keys, object-curly-newline, max-len */
 
 'use strict';
 
@@ -25,8 +25,10 @@ module.exports = {
 
   rules: {
     'accessor-pairs': 'error',
+    'array-bracket-newline': ['error', { multiline: true }],
     'array-bracket-spacing': 'error',
     'array-callback-return': 'error',
+    'array-element-newline': ['error', 'consistent'],
     'arrow-body-style': 'error',
     'arrow-parens': ['error', 'as-needed'],
     'arrow-spacing': 'error',
@@ -35,6 +37,8 @@ module.exports = {
     'brace-style': ['error', 'stroustrup'],
     'callback-return': 'error',
     'camelcase': 'error',
+    'capitalized-comments': 'off',
+    'class-methods-use-this': 'error',
     'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': 'error',
     'comma-style': 'error',
@@ -45,32 +49,50 @@ module.exports = {
     'constructor-super': 'error',
     'curly': 'error',
     'default-case': 'error',
+    'default-case-last': 'error',
+    'default-param-last': 'error',
     'dot-location': ['error', 'property'],
     'dot-notation': 'error',
     'eol-last': 'error',
     'eqeqeq': ['error', 'allow-null'],
+    'for-direction': 'error',
+    'func-call-spacing': ['error', 'never'],
+    'func-name-matching': ['error', 'always'],
     'func-names': 'off', // ES5
     'func-style': ['error', 'declaration'],
+    'function-call-argument-newline': ['error', 'consistent'],
+    'function-paren-newline': ['error', 'consistent'],
     'generator-star-spacing': 'error',
+    'getter-return': 'error',
     'global-require': 'error',
+    'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
     'handle-callback-err': ['error', '^.*(e|E)rr'],
     'id-blacklist': 'off', // http://eslint.org/docs/rules/id-blacklist
+    'id-denylist': ['error', 'err', 'e'],
     'id-length': 'off', // http://eslint.org/docs/rules/id-length
     'id-match': 'off', // http://eslint.org/docs/rules/id-match
+    'implicit-arrow-linebreak': ['error', 'beside'],
     'indent': ['error', 2, { SwitchCase: 1 }],
     'init-declarations': 'off', // a bad option; doesn't catch dynamic variable updates
     'jsx-quotes': 'error',
     'key-spacing': 'error',
     'keyword-spacing': 'error',
+    'line-comment-position': 'off', // variation happens
     'linebreak-style': 'error',
     'lines-around-comment': 'off', // too restricting; conflicts with eslint-disable
+    'lines-between-class-members': 'off', // we want conceptual groups
+    'max-classes-per-file': 'off',
     'max-depth': ['error', { max: 3 }],
-    'max-len': ['error', 90, 2, { ignoreUrls: true, ignoreComments: true, }],
+    'max-len': ['error', 90, 2, { ignoreUrls: true, ignoreComments: true }],
+    'max-lines': 'off',
+    'max-lines-per-function': ['off', { max: 100 }],
     'max-nested-callbacks': ['error', { max: 3 }],
     'max-params': 'error',
     'max-statements': ['error', { max: 12 }],
     'max-statements-per-line': 'error',
+    'multiline-comment-style': ['off', 'separate-lines'],
+    'multiline-ternary': 'off',
     'new-cap': 'error',
     'new-parens': 'error',
     'newline-after-var': 'off', // I'm not consistent enough on this
@@ -78,16 +100,21 @@ module.exports = {
     'newline-per-chained-call': 'error',
     'no-alert': 'error',
     'no-array-constructor': 'error',
+    'no-async-promise-executor': 'error',
+    'no-await-in-loop': 'error', // For scripts this is okay, but most code shouldn't do this
     'no-bitwise': 'error',
+    'no-buffer-constructor': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
     'no-catch-shadow': 'error',
     'no-class-assign': 'error',
+    'no-compare-neg-zero': 'error',
     'no-cond-assign': ['error', 'always'],
     'no-confusing-arrow': 'error',
     'no-console': 'error',
     'no-const-assign': 'error',
     'no-constant-condition': 'error',
+    'no-constructor-return': 'error',
     'no-continue': 'error',
     'no-control-regex': 'error',
     'no-debugger': 'error',
@@ -95,6 +122,7 @@ module.exports = {
     'no-div-regex': 'error',
     'no-dupe-args': 'error',
     'no-dupe-class-members': 'error',
+    'no-dupe-else-if': 'error',
     'no-dupe-keys': 'error',
     'no-duplicate-case': 'error',
     'no-duplicate-imports': 'error',
@@ -115,9 +143,11 @@ module.exports = {
     'no-fallthrough': 'error',
     'no-floating-decimal': 'error',
     'no-func-assign': 'error',
+    'no-global-assign': 'error',
     'no-implicit-coercion': 'error',
     'no-implicit-globals': 'error',
     'no-implied-eval': 'error',
+    'no-import-assign': 'error',
     'no-inline-comments': 'error',
     'no-inner-declarations': 'error',
     'no-invalid-regexp': 'error',
@@ -129,9 +159,13 @@ module.exports = {
     'no-lone-blocks': 'error',
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
-    'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: false, detectObjects: false, }], // this matches up with config in es2015
+    'no-loss-of-precision': 'error',
+    'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: false, detectObjects: false }], // this matches up with config in es2015
+    'no-misleading-character-class': 'error',
+    'no-mixed-operators': 'error',
     'no-mixed-requires': 'error',
     'no-mixed-spaces-and-tabs': 'error',
+    'no-multi-assign': 'error',
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
     'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],
@@ -145,6 +179,7 @@ module.exports = {
     'no-new-require': 'error',
     'no-new-symbol': 'error',
     'no-new-wrappers': 'error',
+    'no-nonoctal-decimal-escape': 'error',
     'no-obj-calls': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
@@ -153,24 +188,31 @@ module.exports = {
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'no-process-env': 'error',
     'no-process-exit': 'error',
+    'no-promise-executor-return': 'error',
     'no-proto': 'error',
     'no-prototype-builtins': 'error',
     'no-redeclare': 'error',
     'no-regex-spaces': 'error',
+    'no-restricted-exports': 'off', // https://eslint.org/docs/rules/no-restricted-exports
     'no-restricted-globals': 'off', // http://eslint.org/docs/rules/no-restricted-globals
     'no-restricted-imports': 'off', // http://eslint.org/docs/rules/no-restricted-imports
     'no-restricted-modules': 'off', // http://eslint.org/docs/rules/no-restricted-modules
-    'no-restricted-syntax': [ 'error', 'DebuggerStatement', 'ForInStatement', 'LabeledStatement', 'WithStatement', ],
+    'no-restricted-properties': 'off', // interesting for project-specific configurations
+    'no-restricted-syntax': ['error', 'DebuggerStatement', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
     'no-return-assign': 'error',
+    'no-return-await': 'error',
     'no-script-url': 'error',
     'no-self-assign': 'error',
     'no-self-compare': 'error',
     'no-sequences': 'error',
-    'no-shadow': ['error', { allow: ['err'], }],
+    'no-setter-return': 'error',
+    'no-shadow': ['error', { allow: ['err'] }],
     'no-shadow-restricted-names': 'error',
     'no-spaced-func': 'error',
     'no-sparse-arrays': 'error',
     'no-sync': 'error',
+    'no-tabs': 'error',
+    'no-template-curly-in-string': 'error',
     'no-ternary': 'off', // I do use it, but I try not to do it often
     'no-this-before-super': 'error',
     'no-throw-literal': 'error',
@@ -183,44 +225,67 @@ module.exports = {
     'no-unmodified-loop-condition': 'error',
     'no-unneeded-ternary': 'error',
     'no-unreachable': 'error',
+    'no-unreachable-loop': 'error',
     'no-unsafe-finally': 'error',
+    'no-unsafe-negation': 'error',
+    'no-unsafe-optional-chaining': 'error',
     'no-unused-expressions': 'error',
     'no-unused-labels': 'error',
+    'no-unused-private-class-members': 'error',
     'no-unused-vars': ['error', { vars: 'local' }],
     'no-use-before-define': 'off', // I use function declaration hoisting for readability
+    'no-useless-backreference': 'error',
     'no-useless-call': 'error',
+    'no-useless-catch': 'error',
     'no-useless-computed-key': 'error',
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
     'no-useless-escape': 'error',
     'no-useless-rename': 'off', // https://github.com/eslint/eslint/issues/6266
+    'no-useless-return': 'error',
     'no-var': 'off', // ES5
     'no-void': 'error',
-    'no-warning-comments': ['error', { terms: ['todo'], location: 'start', }],
+    'no-warning-comments': ['error', { terms: ['todo'], location: 'start' }],
     'no-whitespace-before-property': 'error',
     'no-with': 'error',
+    'nonblock-statement-body-position': 'off', // we always want curlies!
+    'object-curly-newline': ['error', { multiline: true }],
     'object-curly-spacing': ['error', 'always'],
     'object-property-newline': 'off', // wish there was a limit of two keys
     'object-shorthand': 'off', // ES5
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': 'error',
     'operator-assignment': 'error',
-    'operator-linebreak': ['error', 'before', { overrides: { '=': 'after', }, }],
+    'operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],
     'padded-blocks': ['error', 'never'],
+    'padding-line-between-statements': 'off', // interesting for project-specific configurations
     'prefer-arrow-callback': 'off', // ES6
     'prefer-const': 'error',
+    'prefer-destructuring': ['error', { AssignmentExpression: { array: false, object: false } }],
+    'prefer-exponentiation-operator': 'off', // this syntax is still a bit new
+    'prefer-named-capture-group': 'off',
+    'prefer-numeric-literals': 'error',
+    'prefer-object-spread': 'error',
+    'prefer-promise-reject-errors': 'error',
     'prefer-reflect': 'off', // don't think we want to move to these new methods yet
+    'prefer-regex-literals': 'error',
     'prefer-rest-params': 'off', // ES5
     'prefer-spread': 'off', // ES5
     'prefer-template': 'off', // ES5
     'quote-props': ['error', 'consistent-as-needed'],
-    'quotes': ['error', 'single', { avoidEscape: true, }],
+    'quotes': ['error', 'single', { avoidEscape: true }],
     'radix': 'error',
+    'require-atomic-updates': 'error',
+    'require-await': 'error',
     'require-jsdoc': 'off', // when I decide how to do docs
+    'require-unicode-regexp': 'off',
     'require-yield': 'error',
+    'rest-spread-spacing': ['error', 'never'],
     'semi': 'error',
     'semi-spacing': 'error',
+    'semi-style': ['error', 'last'],
     'sort-imports': 'off',
+    'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
     'sort-vars': 'off', // relying on the import plugin for imports ordering
     'space-before-blocks': 'error',
     'space-before-function-paren': ['error', 'never'],
@@ -229,7 +294,10 @@ module.exports = {
     'space-unary-ops': 'error',
     'spaced-comment': 'error',
     'strict': 'error',
+    'switch-colon-spacing': ['error', { after: true, before: false }],
+    'symbol-description': 'error',
     'template-curly-spacing': 'error',
+    'template-tag-spacing': ['error', 'never'],
     'unicode-bom': 'error',
     'use-isnan': 'error',
     'valid-jsdoc': 'error', // when I decide how to do docs
@@ -240,30 +308,53 @@ module.exports = {
     'yield-star-spacing': 'error',
     'yoda': 'error',
 
-    'filenames/match-exported': ['off', {  transform: 'snake', }], // will re-enable this when PR is accepted
+    'filenames/match-exported': ['off', { transform: 'snake' }], // will re-enable this when PR is accepted
     'filenames/match-regex': ['error', /^[a-z0-9_]+$/],
     'filenames/no-index': 'off',
 
     'import/default': 'error',
-    'import/no-commonjs': 'off', // ES5
+    'import/dynamic-import-chunkname': 'error',
     'import/export': 'error',
-    'import/extensions': ['error', { json: 'always', js: 'never', }],
+    'import/exports-last': 'off', // I like to export at the top of the file!
+    'import/extensions': ['error', { json: 'always', js: 'never' }],
+    'import/first': 'error',
+    'import/group-exports': 'off',
     'import/imports-first': 'error',
+    'import/max-dependencies': ['error', { max: 20, ignoreTypeImports: true }],
     'import/named': 'error',
     'import/namespace': 'error',
     'import/newline-after-import': 'off', // breaks for require() https://github.com/benmosher/eslint-plugin-import/pull/326
+    'import/no-absolute-path': 'off',
     'import/no-amd': 'error',
+    'import/no-anonymous-default-export': 'error',
+    'import/no-commonjs': 'off', // ES5
+    'import/no-cycle': 'error',
+    'import/no-default-export': 'error',
     'import/no-deprecated': 'off', // I don't use jsdoc right now, and this rule still under active development
     'import/no-duplicates': 'error',
+    'import/no-dynamic-require': 'error',
     'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
+    'import/no-import-module-exports': 'off',
+    'import/no-internal-modules': 'error',
     'import/no-mutable-exports': 'error',
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
+    'import/no-named-default': 'error',
+    'import/no-named-export': 'off', // the opposite of no-default-export, which is on
     'import/no-namespace': 'error',
     'import/no-nodejs-modules': 'off', // We're definitely using the builtins
+    'import/no-relative-packages': 'off', // specific to lerna multirepo structures
+    'import/no-relative-parent-imports': 'off', // we've got absolute-or-current-dir
+    'import/no-restricted-paths': 'off', // interesting for project-specific configurations
+    'import/no-self-import': 'error',
+    'import/no-unassigned-import': 'off',
     'import/no-unresolved': ['error', { commonjs: true }],
-    'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'], }], // documented default is not correct, specifying manually
+    'import/no-unused-modules': 'error', // can turn this off in projects importing css
+    'import/no-useless-path-segments': 'error',
+    'import/no-webpack-loader-syntax': 'error', // configuration should be in webpack config
+    'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] }], // documented default is not correct, specifying manually
     'import/prefer-default-export': 'error',
+    'import/unambiguous': 'error',
 
     'security/detect-buffer-noassert': 'error',
     'security/detect-child-process': 'error',

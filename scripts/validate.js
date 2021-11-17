@@ -2,10 +2,12 @@
 
 'use strict';
 
+// eslint-disable-next-line import/no-internal-modules
 var validator = require('../node_modules/eslint/lib/shared/config-validator');
 
 function validate(name) {
   console.log('validating ' + name + '...');
+  // eslint-disable-next-line import/no-dynamic-require
   var config = require('../' + name);
   validator.validate(config, name);
 }

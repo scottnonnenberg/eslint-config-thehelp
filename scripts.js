@@ -1,3 +1,5 @@
+/* eslint-disable sort-keys */
+
 'use strict';
 
 module.exports = {

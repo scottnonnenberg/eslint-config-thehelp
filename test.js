@@ -1,9 +1,9 @@
+/* eslint-disable sort-keys */
+
 'use strict';
 
 module.exports = {
-  env: {
-    mocha: true,
-  },
+  env: { mocha: true },
 
   plugins: [
     'bdd',
@@ -22,6 +22,7 @@ module.exports = {
 
     'chai-expect/missing-assertion': 'error',
     'chai-expect/no-inner-compare': 'error',
+    'chai-expect/no-inner-literal': 'error',
     'chai-expect/terminating-properties': 'error',
 
     'immutable/no-let': 'off',

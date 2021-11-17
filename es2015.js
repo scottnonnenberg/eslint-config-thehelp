@@ -1,11 +1,9 @@
-/* eslint-disable no-inline-comments */
+/* eslint-disable no-inline-comments, sort-keys, object-curly-newline, max-len */
 
 'use strict';
 
 module.exports = {
-  env: {
-    es6: true,
-  },
+  env: { es6: true },
 
   parserOptions: {
     ecmaVersion: 7,
@@ -19,22 +17,11 @@ module.exports = {
 
   rules: {
     'func-names': 'error',
-    'no-empty-function': ['error', {
-      allow: [
-        'arrowFunctions',
-      ],
-    }],
-    'no-magic-numbers': ['error', { // this matches up with config in core
-      ignore: [-2, -1, 0, 1, 2],
-      ignoreArrayIndexes: true,
-      enforceConst: true,
-      detectObjects: false,
-    }],
+    'no-empty-function': ['error', { allow: ['arrowFunctions'] }],
+    'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: true, detectObjects: false }], // this matches up with config in core
     'no-var': 'error',
     'object-shorthand': 'error',
-    'prefer-arrow-callback': ['error', {
-      allowNamedFunctions: true,
-    }],
+    'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
     'prefer-template': 'error',

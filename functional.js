@@ -1,4 +1,4 @@
-/* eslint-disable no-inline-comments */
+/* eslint-disable no-inline-comments, sort-keys, object-curly-newline, max-len */
 
 'use strict';
 
@@ -18,15 +18,20 @@ module.exports = {
     'no-loops/no-loops': 'error',
 
     'thehelp/no-array-mutation': 'error',
-    'thehelp/no-mutation': ['error', {
-      exceptions: [{
-        object: 'module',
-        property: 'exports',
-      }, {
-        property: 'propTypes',
-      }, {
-        object: 'this',
-      }],
-    }],
+    'thehelp/no-mutation': [
+      'error',
+      {
+        exceptions: [
+          {
+            object: 'module',
+            property: 'exports',
+          }, {
+            property: 'propTypes',
+          }, {
+            object: 'this',
+          },
+        ],
+      },
+    ],
   },
 };

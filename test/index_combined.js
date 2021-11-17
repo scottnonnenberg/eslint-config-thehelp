@@ -10,8 +10,6 @@ var functional = require('../functional');
 var combined = _.merge({}, core, es2015, functional);
 var plugins = core.plugins.concat(functional.plugins);
 
-var indexCombined = _.assign({}, combined, {
-  plugins: plugins,
-});
+var indexCombined = _.assign({}, combined, { plugins: plugins });
 
 module.exports = indexCombined;
