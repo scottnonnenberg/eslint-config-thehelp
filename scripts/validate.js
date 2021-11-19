@@ -22,6 +22,9 @@ validate('core');
 
 validate('default');
 
+validate('prettier');
+validate('prettierReact');
+
 validate('test/indexCombined');
 validate('test/reactCombined');
 validate('test/testCombined');
