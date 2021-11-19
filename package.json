@@ -33,6 +33,20 @@
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-security": "^1.4.0"
   },
+  "peerDependenciesMeta": {
+    "@scottnonnenberg/eslint-plugin-thehelp": { "optional": false },
+    "eslint": { "optional": false },
+    "eslint-plugin-filenames": { "optional": false },
+    "eslint-plugin-import": { "optional": false },
+    "eslint-plugin-security": { "optional": false },
+
+    "eslint-plugin-bdd": { "optional": true },
+    "eslint-plugin-chai-expect": { "optional": true },
+    "eslint-plugin-immutable": { "optional": true },
+    "eslint-plugin-jsx-a11y": { "optional": true },
+    "eslint-plugin-no-loops": { "optional": true },
+    "eslint-plugin-react": { "optional": true }
+  },
   "devDependencies": {
     "eslint-find-rules": "4.0.0",
     "husky": "7.0.4",
