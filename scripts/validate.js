@@ -22,6 +22,6 @@ validate('core');
 
 validate('default');
 
-validate('test/index_combined');
-validate('test/react_combined');
-validate('test/test_combined');
+validate('test/indexCombined');
+validate('test/reactCombined');
+validate('test/testCombined');

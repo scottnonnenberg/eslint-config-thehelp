@@ -60,7 +60,7 @@ module.exports = {
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-first-prop-new-line': ['error', 'multiline'],
     'react/jsx-fragments': ['error', 'syntax'],
-    'react/jsx-handler-names': 'off', // a little too limiting for me
+    'react/jsx-handler-names': 'error',
     'react/jsx-indent': ['error', 2],
     'react/jsx-indent-props': ['error', 2],
     'react/jsx-key': 'error',
@@ -93,10 +93,10 @@ module.exports = {
     'react/default-props-match-prop-types': 'error',
     'react/destructuring-assignment': 'error',
     'react/display-name': 'error',
-    'react/forbid-component-props': 'off', // interesting for project-specific configurations
-    'react/forbid-dom-props': 'off', // interesting for project-specific configurations
-    'react/forbid-elements': 'off', // interesting for project-specific configurations
-    'react/forbid-foreign-prop-types': 'off', // interesting for project-specific configurations
+    'react/forbid-component-props': 'off', // project-specific
+    'react/forbid-dom-props': 'off', // project-specific
+    'react/forbid-elements': 'off', // project-specific
+    'react/forbid-foreign-prop-types': 'off', // project-specific
     'react/forbid-prop-types': ['error', { forbid: ['any'] }],
     'react/function-component-definition': ['error', { namedComponents: 'function-declaration' }],
     'react/no-access-state-in-setstate': 'error',
@@ -136,7 +136,7 @@ module.exports = {
     'react/prop-types': 'error',
     'react/react-in-jsx-scope': 'error',
     'react/require-default-props': 'off',
-    'react/require-extension': 'off', // Nope, using JSX in plain .js files
+    'react/require-extension': 'error',
     'react/require-optimization': 'off',
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'error',
@@ -146,6 +146,6 @@ module.exports = {
     'react/static-property-placement': 'off',
     'react/style-prop-object': 'error',
     'react/void-dom-elements-no-children': 'error',
-    'react/wrap-multilines': 'off', // I use raw multilines, because it still works
+    'react/wrap-multilines': 'error',
   },
 };

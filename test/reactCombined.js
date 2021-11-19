@@ -3,7 +3,7 @@
 var _ = require('lodash');
 
 var react = require('../react');
-var start = require('./index_combined');
+var start = require('./indexCombined');
 
 
 var combined = _.merge({}, start, react);

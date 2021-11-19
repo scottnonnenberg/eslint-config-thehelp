@@ -66,8 +66,8 @@ module.exports = {
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
     'id-denylist': ['error', 'err', 'e'],
-    'id-length': 'off', // http://eslint.org/docs/rules/id-length
-    'id-match': 'off', // http://eslint.org/docs/rules/id-match
+    'id-length': ['error', { exceptionPatterns: ['[_x-z]'], properties: 'never', min: 3 }],
+    'id-match': 'off', // project-specific
     'implicit-arrow-linebreak': ['error', 'beside'],
     'indent': ['error', 2, { SwitchCase: 1 }],
     'init-declarations': 'off', // a bad option; doesn't catch dynamic variable updates
@@ -160,7 +160,7 @@ module.exports = {
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
     'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],
-    'no-negated-condition': 'off', // no, I like breaking out of functions early
+    'no-negated-condition': 'error',
     'no-nested-ternary': 'error',
     'no-new': 'error',
     'no-new-func': 'error',
@@ -171,16 +171,16 @@ module.exports = {
     'no-obj-calls': 'error',
     'no-octal': 'error',
     'no-octal-escape': 'error',
-    'no-param-reassign': 'off', // options = options || {} is useful
+    'no-param-reassign': 'error',
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'no-promise-executor-return': 'error',
     'no-proto': 'error',
     'no-prototype-builtins': 'error',
     'no-redeclare': 'error',
     'no-regex-spaces': 'error',
-    'no-restricted-exports': 'off', // https://eslint.org/docs/rules/no-restricted-exports
-    'no-restricted-globals': 'off', // http://eslint.org/docs/rules/no-restricted-globals
-    'no-restricted-imports': 'off', // http://eslint.org/docs/rules/no-restricted-imports
+    'no-restricted-exports': 'off', // project-specific
+    'no-restricted-globals': 'off', // project-specific
+    'no-restricted-imports': 'off', // project-specific
     'no-restricted-properties': 'off', // project-specific
     'no-restricted-syntax': ['error', 'DebuggerStatement', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
     'no-return-assign': 'error',
@@ -223,7 +223,7 @@ module.exports = {
     'no-useless-concat': 'error',
     'no-useless-constructor': 'error',
     'no-useless-escape': 'error',
-    'no-useless-rename': 'off', // https://github.com/eslint/eslint/issues/6266
+    'no-useless-rename': 'error',
     'no-useless-return': 'error',
     'no-var': 'off', // ES5
     'no-void': 'error',
@@ -240,7 +240,7 @@ module.exports = {
     'operator-assignment': 'error',
     'operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],
     'padded-blocks': ['error', 'never'],
-    'padding-line-between-statements': 'off', // interesting for project-specific configurations
+    'padding-line-between-statements': 'off', // project-specific
     'prefer-arrow-callback': 'off', // ES6
     'prefer-const': 'error',
     'prefer-destructuring': ['error', { AssignmentExpression: { array: false, object: false } }],
@@ -287,8 +287,8 @@ module.exports = {
     'yield-star-spacing': 'error',
     'yoda': 'error',
 
-    'filenames/match-exported': ['off', { transform: 'snake' }], // will re-enable this when PR is accepted
-    'filenames/match-regex': ['error', /^[a-z0-9_]+$/],
+    'filenames/match-exported': 'error',
+    'filenames/match-regex': ['error', /^[a-zA-Z0-9_]+$/],
     'filenames/no-index': 'off',
 
     'import/default': 'error',
@@ -308,7 +308,7 @@ module.exports = {
     'import/no-commonjs': 'off', // ES5
     'import/no-cycle': 'error',
     'import/no-default-export': 'error',
-    'import/no-deprecated': 'off', // I don't use jsdoc right now, and this rule still under active development
+    'import/no-deprecated': 'error',
     'import/no-duplicates': 'error',
     'import/no-dynamic-require': 'error',
     'import/no-extraneous-dependencies': ['error', { devDependencies: false }],
@@ -320,10 +320,10 @@ module.exports = {
     'import/no-named-default': 'error',
     'import/no-named-export': 'off', // the opposite of no-default-export, which is on
     'import/no-namespace': 'error',
-    'import/no-nodejs-modules': 'off', // We're definitely using the builtins
+    'import/no-nodejs-modules': 'off', // project-specific
     'import/no-relative-packages': 'off', // specific to lerna multirepo structures
     'import/no-relative-parent-imports': 'off', // we've got absolute-or-current-dir
-    'import/no-restricted-paths': 'off', // interesting for project-specific configurations
+    'import/no-restricted-paths': 'off', // project-specific
     'import/no-self-import': 'error',
     'import/no-unassigned-import': 'off',
     'import/no-unresolved': ['error', { commonjs: true }],

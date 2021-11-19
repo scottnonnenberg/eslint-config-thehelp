@@ -3,7 +3,7 @@
 var _ = require('lodash');
 
 var test = require('../test');
-var start = require('./index_combined');
+var start = require('./indexCombined');
 
 
 var combined = _.merge({}, start, test);
