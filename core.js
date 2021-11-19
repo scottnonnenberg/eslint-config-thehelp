@@ -1,4 +1,4 @@
-/* eslint-disable no-inline-comments, no-magic-numbers, sort-keys, object-curly-newline, max-len */
+/* eslint-disable no-inline-comments */
 
 'use strict';
 
@@ -6,6 +6,7 @@ module.exports = {
   env: {
     commonjs: true,
     node: true,
+    es2020: true,
   },
 
   settings: {
@@ -20,8 +21,10 @@ module.exports = {
     'filenames',
     'import',
     'security',
-    '@scottnonnenberg/thehelp',
+    '@scottnonnenberg/eslint-plugin-thehelp',
   ],
+
+  reportUnusedDisableDirectives: true,
 
   rules: {
     'accessor-pairs': 'error',
@@ -41,7 +44,7 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'comma-spacing': 'error',
     'comma-style': 'error',
-    'complexity': ['error', { max: 8 }],
+    'complexity': ['error', { max: 20 }],
     'computed-property-spacing': 'error',
     'consistent-return': 'error', // NOTE: this does conflict with notate/breadcrumbs
     'consistent-this': ['error', '_this'],
@@ -55,9 +58,9 @@ module.exports = {
     'eol-last': 'error',
     'eqeqeq': ['error', 'allow-null'],
     'for-direction': 'error',
-    'func-call-spacing': ['error', 'never'],
+    'func-call-spacing': ['error', 'never'], // Disappointing: 'never' wants no space between async and () for arrow functions.
     'func-name-matching': ['error', 'always'],
-    'func-names': 'off', // ES5
+    'func-names': 'error',
     'func-style': ['error', 'declaration'],
     'function-call-argument-newline': ['error', 'consistent'],
     'function-paren-newline': ['error', 'consistent'],
@@ -66,11 +69,11 @@ module.exports = {
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
     'id-denylist': ['error', 'err', 'e'],
-    'id-length': ['error', { exceptionPatterns: ['[_x-z]'], properties: 'never', min: 3 }],
+    'id-length': ['error', { exceptionPatterns: ['[_i-kx-z]'], properties: 'never', min: 3 }],
     'id-match': 'off', // project-specific
     'implicit-arrow-linebreak': ['error', 'beside'],
     'indent': ['error', 2, { SwitchCase: 1 }],
-    'init-declarations': 'off', // a bad option; doesn't catch dynamic variable updates
+    'init-declarations': 'off', // exceptions are too common
     'jsx-quotes': 'error',
     'key-spacing': 'error',
     'keyword-spacing': 'error',
@@ -85,7 +88,7 @@ module.exports = {
     'max-lines-per-function': ['off', { max: 100 }],
     'max-nested-callbacks': ['error', { max: 3 }],
     'max-params': 'error',
-    'max-statements': ['error', { max: 12 }],
+    'max-statements': 'off', // complexity rule is enough
     'max-statements-per-line': 'error',
     'multiline-comment-style': ['off', 'separate-lines'],
     'multiline-ternary': 'off',
@@ -107,7 +110,7 @@ module.exports = {
     'no-const-assign': 'error',
     'no-constant-condition': 'error',
     'no-constructor-return': 'error',
-    'no-continue': 'error',
+    'no-continue': 'off', // Sometimes you need it!
     'no-control-regex': 'error',
     'no-debugger': 'error',
     'no-delete-var': 'error',
@@ -121,7 +124,7 @@ module.exports = {
     'no-else-return': 'error',
     'no-empty': 'error',
     'no-empty-character-class': 'error',
-    'no-empty-function': 'off', // ES5
+    'no-empty-function': 'error',
     'no-empty-pattern': 'error',
     'no-eq-null': 'off', // this space already covered by eqeqeq
     'no-eval': 'error',
@@ -152,7 +155,7 @@ module.exports = {
     'no-lonely-if': 'error',
     'no-loop-func': 'error',
     'no-loss-of-precision': 'error',
-    'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: false, detectObjects: false }], // this matches up with config in es2015
+    'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: true, detectObjects: false }],
     'no-misleading-character-class': 'error',
     'no-mixed-operators': 'error',
     'no-mixed-spaces-and-tabs': 'error',
@@ -190,7 +193,7 @@ module.exports = {
     'no-self-compare': 'error',
     'no-sequences': 'error',
     'no-setter-return': 'error',
-    'no-shadow': ['error', { allow: ['err'] }],
+    'no-shadow': 'error',
     'no-shadow-restricted-names': 'error',
     'no-sparse-arrays': 'error',
     'no-tabs': 'error',
@@ -201,7 +204,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-undef': 'error',
     'no-undef-init': 'error',
-    'no-undefined': 'error',
+    'no-undefined': 'off', // Typescript pushes you very strongly towards undefined
     'no-underscore-dangle': 'off', // sometimes I'll export internals prefixed with _
     'no-unexpected-multiline': 'error',
     'no-unmodified-loop-condition': 'error',
@@ -214,7 +217,7 @@ module.exports = {
     'no-unused-expressions': 'error',
     'no-unused-labels': 'error',
     'no-unused-private-class-members': 'error',
-    'no-unused-vars': ['error', { vars: 'local' }],
+    'no-unused-vars': 'error',
     'no-use-before-define': 'off', // I use function declaration hoisting for readability
     'no-useless-backreference': 'error',
     'no-useless-call': 'error',
@@ -225,7 +228,7 @@ module.exports = {
     'no-useless-escape': 'error',
     'no-useless-rename': 'error',
     'no-useless-return': 'error',
-    'no-var': 'off', // ES5
+    'no-var': 'error',
     'no-void': 'error',
     'no-warning-comments': ['error', { terms: ['todo'], location: 'start' }],
     'no-whitespace-before-property': 'error',
@@ -234,14 +237,14 @@ module.exports = {
     'object-curly-newline': ['error', { multiline: true }],
     'object-curly-spacing': ['error', 'always'],
     'object-property-newline': 'off', // wish there was a limit of two keys
-    'object-shorthand': 'off', // ES5
+    'object-shorthand': 'error',
     'one-var': ['error', 'never'],
     'one-var-declaration-per-line': 'error',
     'operator-assignment': 'error',
     'operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],
     'padded-blocks': ['error', 'never'],
     'padding-line-between-statements': 'off', // project-specific
-    'prefer-arrow-callback': 'off', // ES6
+    'prefer-arrow-callback': ['error', { allowNamedFunctions: true }],
     'prefer-const': 'error',
     'prefer-destructuring': ['error', { AssignmentExpression: { array: false, object: false } }],
     'prefer-exponentiation-operator': 'off', // this syntax is still a bit new
@@ -250,9 +253,9 @@ module.exports = {
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'error',
     'prefer-regex-literals': 'error',
-    'prefer-rest-params': 'off', // ES5
-    'prefer-spread': 'off', // ES5
-    'prefer-template': 'off', // ES5
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error',
+    'prefer-template': 'error',
     'quote-props': ['error', 'consistent-as-needed'],
     'quotes': ['error', 'single', { avoidEscape: true }],
     'radix': 'error',
@@ -265,7 +268,7 @@ module.exports = {
     'semi-spacing': 'error',
     'semi-style': ['error', 'last'],
     'sort-imports': 'off',
-    'sort-keys': ['error', 'asc', { caseSensitive: true, natural: true }],
+    'sort-keys': 'off', // there are too many situations where we want semantic ordering
     'sort-vars': 'off', // relying on the import plugin for imports ordering
     'space-before-blocks': 'error',
     'space-before-function-paren': ['error', 'never'],
@@ -273,7 +276,7 @@ module.exports = {
     'space-infix-ops': 'error',
     'space-unary-ops': 'error',
     'spaced-comment': 'error',
-    'strict': 'error',
+    'strict': 'off', // Modern environments no longer need this directive
     'switch-colon-spacing': ['error', { after: true, before: false }],
     'symbol-description': 'error',
     'template-curly-spacing': 'error',
@@ -288,7 +291,7 @@ module.exports = {
     'yoda': 'error',
 
     'filenames/match-exported': 'error',
-    'filenames/match-regex': ['error', /^[a-zA-Z0-9_]+$/],
+    'filenames/match-regex': ['error', /^[a-zA-Z0-9_\-.]+$/],
     'filenames/no-index': 'off',
 
     'import/default': 'error',
@@ -305,7 +308,7 @@ module.exports = {
     'import/no-absolute-path': 'off',
     'import/no-amd': 'error',
     'import/no-anonymous-default-export': 'error',
-    'import/no-commonjs': 'off', // ES5
+    'import/no-commonjs': 'off',
     'import/no-cycle': 'error',
     'import/no-default-export': 'error',
     'import/no-deprecated': 'error',
@@ -318,8 +321,8 @@ module.exports = {
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'error',
     'import/no-named-default': 'error',
-    'import/no-named-export': 'off', // the opposite of no-default-export, which is on
-    'import/no-namespace': 'error',
+    'import/no-named-export': 'off', // We're always exporting named things
+    'import/no-namespace': 'off', // throws error: "Cannot read properties of undefined (reading 'node')"
     'import/no-nodejs-modules': 'off', // project-specific
     'import/no-relative-packages': 'off', // specific to lerna multirepo structures
     'import/no-relative-parent-imports': 'off', // we've got absolute-or-current-dir
@@ -331,7 +334,7 @@ module.exports = {
     'import/no-useless-path-segments': 'error',
     'import/no-webpack-loader-syntax': 'error', // configuration should be in webpack config
     'import/order': ['error', { groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'] }], // documented default is not correct, specifying manually
-    'import/prefer-default-export': 'error',
+    'import/prefer-default-export': 'off', // Even in single-export modules, we export a named thing
     'import/unambiguous': 'error',
 
     'security/detect-buffer-noassert': 'error',

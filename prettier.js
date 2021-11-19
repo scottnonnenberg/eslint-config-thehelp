@@ -4,6 +4,8 @@
 
 module.exports = {
   rules: {
+    'quote-props': 'off',
+
     // Taken from eslint's layout/formatting list: https://eslint.org/docs/rules/#layout-formatting
 
     'array-bracket-newline': 'off',

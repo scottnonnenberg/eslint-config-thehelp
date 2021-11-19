@@ -1,5 +1,3 @@
-/* eslint-disable no-inline-comments, no-magic-numbers, sort-keys, object-curly-newline, max-len */
-
 'use strict';
 
 module.exports = {

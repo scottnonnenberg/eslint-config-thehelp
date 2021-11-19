@@ -1,4 +1,4 @@
-/* eslint-disable no-inline-comments, no-magic-numbers, sort-keys, object-curly-newline, max-len */
+/* eslint-disable no-inline-comments */
 
 'use strict';
 
@@ -23,10 +23,8 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'error',
     'jsx-a11y/control-has-associated-label': 'error',
     'jsx-a11y/heading-has-content': 'error',
-    'jsx-a11y/href-no-hash': 'error',
     'jsx-a11y/html-has-lang': 'error',
     'jsx-a11y/iframe-has-title': 'error',
-    'jsx-a11y/img-has-alt': 'error',
     'jsx-a11y/img-redundant-alt': 'error',
     'jsx-a11y/interactive-supports-focus': 'error',
     'jsx-a11y/label-has-associated-control': 'error',
@@ -42,8 +40,6 @@ module.exports = {
     'jsx-a11y/no-noninteractive-tabindex': ['error', { roles: ['tabpanel'] }],
     'jsx-a11y/no-redundant-roles': ['error', { roles: ['tabpanel'] }],
     'jsx-a11y/no-static-element-interactions': ['error', { handlers: ['onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp'] }],
-    'jsx-a11y/onclick-has-focus': 'error',
-    'jsx-a11y/onclick-has-role': 'error',
     'jsx-a11y/role-has-required-aria-props': 'error',
     'jsx-a11y/role-supports-aria-props': 'error',
     'jsx-a11y/scope': 'error',
@@ -77,7 +73,7 @@ module.exports = {
     'react/jsx-no-undef': 'error',
     'react/jsx-no-useless-fragment': 'error',
     'react/jsx-one-expression-per-line': ['error', { allow: 'single-child' }],
-    'react/jsx-pascal-case': 'error',
+    'react/jsx-pascal-case': ['error', { allowAllCaps: true }],
     'react/jsx-props-no-multi-spaces': 'error',
     'react/jsx-props-no-spreading': 'off', // common pattern in stories
     'react/jsx-sort-default-props': 'off',
@@ -136,7 +132,6 @@ module.exports = {
     'react/prop-types': 'error',
     'react/react-in-jsx-scope': 'error',
     'react/require-default-props': 'off',
-    'react/require-extension': 'error',
     'react/require-optimization': 'off',
     'react/require-render-return': 'error',
     'react/self-closing-comp': 'error',

@@ -1,30 +1,31 @@
-/* eslint-disable global-require, security/detect-non-literal-require */
+/* eslint-disable security/detect-non-literal-require */
 
 'use strict';
 
 // eslint-disable-next-line import/no-internal-modules
-var validator = require('../node_modules/eslint/lib/shared/config-validator');
+const validator = require('../node_modules/eslint/lib/shared/config-validator');
 
 function validate(name) {
-  console.log('validating ' + name + '...');
+  console.log(`validating ${name}`);
   // eslint-disable-next-line import/no-dynamic-require
-  var config = require('../' + name);
+  const config = require(`../${name}`);
   validator.validate(config, name);
 }
 
-validate('scripts');
-validate('test');
-
-validate('react');
-validate('es2015');
-validate('functional');
 validate('core');
-
-validate('default');
+validate('functional');
+validate('react');
+validate('typescript');
 
 validate('prettier');
 validate('prettierReact');
+validate('prettierTypescript');
 
-validate('test/indexCombined');
-validate('test/reactCombined');
+validate('scripts');
+validate('test');
+validate('testTypescript');
+
+validate('test/combined');
+validate('test/prettierCombined');
+validate('test/scriptCombined');
 validate('test/testCombined');

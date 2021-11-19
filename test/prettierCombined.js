@@ -3,7 +3,8 @@
 module.exports = {
   extends: [
     './combined',
-    '../test',
-    '../testTypescript',
+    '../prettier',
+    '../prettierReact',
+    '../prettierTypescript',
   ],
 };

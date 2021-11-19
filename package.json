@@ -2,26 +2,29 @@
   "name": "@scottnonnenberg/eslint-config-thehelp",
   "version": "0.8.0",
   "description": "The way I write javascript.",
-  "main": "index.js",
+  "main": "core.js",
   "scripts": {
     "release": "standard-version",
-    "test": "npm run lint && npm run validate && npm run find-missing && npm run find-deprecated",
+    "test": "npm run lint && npm run lint-typescript && npm run validate && npm run find-missing && npm run find-deprecated",
     "lint": "eslint .",
-    "find-missing": "npm run find-missing-core && npm run find-missing-default && npm run find-missing-react && npm run find-missing-test",
-    "find-missing-core": "eslint-find-rules -u core.js",
-    "find-missing-default": "eslint-find-rules -u test/indexCombined.js",
-    "find-missing-react": "eslint-find-rules -u test/reactCombined.js",
+    "find-missing": "npm run find-missing-core && npm run find-missing-prettier && npm run find-missing-script && npm run find-missing-test",
+    "find-missing-core": "eslint-find-rules -u test/combined.js",
+    "find-missing-prettier": "eslint-find-rules -u test/prettierCombined.js",
+    "find-missing-script": "eslint-find-rules -u test/scriptCombined.js",
     "find-missing-test": "eslint-find-rules -u test/testCombined.js",
-    "find-deprecated": "npm run find-deprecated-core && npm run find-deprecated-default && npm run find-deprecated-react && npm run find-deprecated-test",
+    "find-deprecated": "npm run find-deprecated-core && npm run find-deprecated-prettier && npm run find-deprecated-script && npm run find-deprecated-test",
     "find-deprecated-core": "eslint-find-rules -d core.js",
-    "find-deprecated-default": "eslint-find-rules -d test/indexCombined.js",
-    "find-deprecated-react": "eslint-find-rules -d test/reactCombined.js",
+    "find-deprecated-prettier": "eslint-find-rules -d test/prettierCombined.js",
+    "find-deprecated-script": "eslint-find-rules -d test/scriptCombined.js",
     "find-deprecated-test": "eslint-find-rules -d test/testCombined.js",
+    "lint-typescript": "eslint --ext .ts --no-ignore --max-warnings=0 --report-unused-disable-directives test/typescript",
     "validate": "node scripts/validate.js",
     "commitmsg": "validate-commit-msg"
   },
   "peerDependencies": {
     "@scottnonnenberg/eslint-plugin-thehelp": "^0.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
     "eslint": "^8.2.0",
     "eslint-plugin-bdd": "^2.1.1",
     "eslint-plugin-chai-expect": "^3.0.0",
@@ -31,24 +34,57 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-no-loops": "^0.3.0",
     "eslint-plugin-react": "^7.27.0",
-    "eslint-plugin-security": "^1.4.0"
+    "eslint-plugin-security": "^1.4.0",
+    "typescript": "^4.5.2"
   },
   "peerDependenciesMeta": {
-    "@scottnonnenberg/eslint-plugin-thehelp": { "optional": false },
-    "eslint": { "optional": false },
-    "eslint-plugin-filenames": { "optional": false },
-    "eslint-plugin-import": { "optional": false },
-    "eslint-plugin-security": { "optional": false },
-
-    "eslint-plugin-bdd": { "optional": true },
-    "eslint-plugin-chai-expect": { "optional": true },
-    "eslint-plugin-immutable": { "optional": true },
-    "eslint-plugin-jsx-a11y": { "optional": true },
-    "eslint-plugin-no-loops": { "optional": true },
-    "eslint-plugin-react": { "optional": true }
+    "@scottnonnenberg/eslint-plugin-thehelp": {
+      "optional": false
+    },
+    "eslint": {
+      "optional": false
+    },
+    "eslint-plugin-filenames": {
+      "optional": false
+    },
+    "eslint-plugin-import": {
+      "optional": false
+    },
+    "eslint-plugin-security": {
+      "optional": false
+    },
+    "@typescript-eslint/eslint-plugin": {
+      "optional": true
+    },
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint-plugin-bdd": {
+      "optional": true
+    },
+    "eslint-plugin-chai-expect": {
+      "optional": true
+    },
+    "eslint-plugin-immutable": {
+      "optional": true
+    },
+    "eslint-plugin-jsx-a11y": {
+      "optional": true
+    },
+    "eslint-plugin-no-loops": {
+      "optional": true
+    },
+    "eslint-plugin-react": {
+      "optional": true
+    },
+    "typescript": {
+      "optional": true
+    }
   },
   "devDependencies": {
     "@scottnonnenberg/eslint-plugin-thehelp": "0.5.0",
+    "@typescript-eslint/eslint-plugin": "5.4.0",
+    "@typescript-eslint/parser": "5.4.0",
     "eslint": "8.2.0",
     "eslint-find-rules": "4.0.0",
     "eslint-plugin-bdd": "2.1.1",
@@ -63,6 +99,7 @@
     "husky": "7.0.4",
     "lodash": "4.17.21",
     "standard-version": "9.3.2",
+    "typescript": "4.5.2",
     "validate-commit-msg": "2.14.0"
   },
   "config": {

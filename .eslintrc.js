@@ -1,5 +1,20 @@
-/* eslint-disable filenames/match-regex */
-
 'use strict';
 
-module.exports = require('./core');
+module.exports = {
+  extends: [
+    './core',
+    './functional',
+    './react',
+    './test',
+
+    './scripts',
+    './prettier',
+    './prettierReact',
+  ],
+
+  settings: {
+    react: {
+      version: '16.13.1',
+    },
+  },
+};

@@ -3,6 +3,8 @@
 module.exports = {
   extends: [
     '../core',
-    '../test',
+    '../functional',
+    '../react',
+    '../typescript',
   ],
 };
