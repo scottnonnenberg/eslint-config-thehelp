@@ -14,7 +14,6 @@ module.exports = {
     'max-nested-callbacks': 'off',
     'no-magic-numbers': 'off',
     'no-unused-expressions': 'off',
-    'no-sync': 'off',
     'no-undefined': 'off',
 
     'bdd/focus': 'error',

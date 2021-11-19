@@ -35,7 +35,6 @@ module.exports = {
     'block-scoped-var': 'error',
     'block-spacing': 'error',
     'brace-style': ['error', 'stroustrup'],
-    'callback-return': 'error',
     'camelcase': 'error',
     'capitalized-comments': 'off',
     'class-methods-use-this': 'error',
@@ -64,11 +63,8 @@ module.exports = {
     'function-paren-newline': ['error', 'consistent'],
     'generator-star-spacing': 'error',
     'getter-return': 'error',
-    'global-require': 'error',
     'grouped-accessor-pairs': 'error',
     'guard-for-in': 'error',
-    'handle-callback-err': ['error', '^.*(e|E)rr'],
-    'id-blacklist': 'off', // http://eslint.org/docs/rules/id-blacklist
     'id-denylist': ['error', 'err', 'e'],
     'id-length': 'off', // http://eslint.org/docs/rules/id-length
     'id-match': 'off', // http://eslint.org/docs/rules/id-match
@@ -95,18 +91,14 @@ module.exports = {
     'multiline-ternary': 'off',
     'new-cap': 'error',
     'new-parens': 'error',
-    'newline-after-var': 'off', // I'm not consistent enough on this
-    'newline-before-return': 'off', // Also not consistent enough here
     'newline-per-chained-call': 'error',
     'no-alert': 'error',
     'no-array-constructor': 'error',
     'no-async-promise-executor': 'error',
     'no-await-in-loop': 'error', // For scripts this is okay, but most code shouldn't do this
     'no-bitwise': 'error',
-    'no-buffer-constructor': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
-    'no-catch-shadow': 'error',
     'no-class-assign': 'error',
     'no-compare-neg-zero': 'error',
     'no-cond-assign': ['error', 'always'],
@@ -163,20 +155,16 @@ module.exports = {
     'no-magic-numbers': ['error', { ignore: [-2, -1, 0, 1, 2], ignoreArrayIndexes: true, enforceConst: false, detectObjects: false }], // this matches up with config in es2015
     'no-misleading-character-class': 'error',
     'no-mixed-operators': 'error',
-    'no-mixed-requires': 'error',
     'no-mixed-spaces-and-tabs': 'error',
     'no-multi-assign': 'error',
     'no-multi-spaces': 'error',
     'no-multi-str': 'error',
     'no-multiple-empty-lines': ['error', { max: 2, maxEOF: 1 }],
-    'no-native-reassign': 'error',
     'no-negated-condition': 'off', // no, I like breaking out of functions early
-    'no-negated-in-lhs': 'error',
     'no-nested-ternary': 'error',
     'no-new': 'error',
     'no-new-func': 'error',
     'no-new-object': 'error',
-    'no-new-require': 'error',
     'no-new-symbol': 'error',
     'no-new-wrappers': 'error',
     'no-nonoctal-decimal-escape': 'error',
@@ -184,10 +172,7 @@ module.exports = {
     'no-octal': 'error',
     'no-octal-escape': 'error',
     'no-param-reassign': 'off', // options = options || {} is useful
-    'no-path-concat': 'error',
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
-    'no-process-env': 'error',
-    'no-process-exit': 'error',
     'no-promise-executor-return': 'error',
     'no-proto': 'error',
     'no-prototype-builtins': 'error',
@@ -196,8 +181,7 @@ module.exports = {
     'no-restricted-exports': 'off', // https://eslint.org/docs/rules/no-restricted-exports
     'no-restricted-globals': 'off', // http://eslint.org/docs/rules/no-restricted-globals
     'no-restricted-imports': 'off', // http://eslint.org/docs/rules/no-restricted-imports
-    'no-restricted-modules': 'off', // http://eslint.org/docs/rules/no-restricted-modules
-    'no-restricted-properties': 'off', // interesting for project-specific configurations
+    'no-restricted-properties': 'off', // project-specific
     'no-restricted-syntax': ['error', 'DebuggerStatement', 'ForInStatement', 'LabeledStatement', 'WithStatement'],
     'no-return-assign': 'error',
     'no-return-await': 'error',
@@ -208,9 +192,7 @@ module.exports = {
     'no-setter-return': 'error',
     'no-shadow': ['error', { allow: ['err'] }],
     'no-shadow-restricted-names': 'error',
-    'no-spaced-func': 'error',
     'no-sparse-arrays': 'error',
-    'no-sync': 'error',
     'no-tabs': 'error',
     'no-template-curly-in-string': 'error',
     'no-ternary': 'off', // I do use it, but I try not to do it often
@@ -267,7 +249,6 @@ module.exports = {
     'prefer-numeric-literals': 'error',
     'prefer-object-spread': 'error',
     'prefer-promise-reject-errors': 'error',
-    'prefer-reflect': 'off', // don't think we want to move to these new methods yet
     'prefer-regex-literals': 'error',
     'prefer-rest-params': 'off', // ES5
     'prefer-spread': 'off', // ES5
@@ -277,7 +258,6 @@ module.exports = {
     'radix': 'error',
     'require-atomic-updates': 'error',
     'require-await': 'error',
-    'require-jsdoc': 'off', // when I decide how to do docs
     'require-unicode-regexp': 'off',
     'require-yield': 'error',
     'rest-spread-spacing': ['error', 'never'],
@@ -300,7 +280,6 @@ module.exports = {
     'template-tag-spacing': ['error', 'never'],
     'unicode-bom': 'error',
     'use-isnan': 'error',
-    'valid-jsdoc': 'error', // when I decide how to do docs
     'valid-typeof': 'error',
     'vars-on-top': 'off', // yes, var scope can be confusing, but this is too limiting
     'wrap-iife': 'error',
@@ -319,7 +298,6 @@ module.exports = {
     'import/extensions': ['error', { json: 'always', js: 'never' }],
     'import/first': 'error',
     'import/group-exports': 'off',
-    'import/imports-first': 'error',
     'import/max-dependencies': ['error', { max: 20, ignoreTypeImports: true }],
     'import/named': 'error',
     'import/namespace': 'error',

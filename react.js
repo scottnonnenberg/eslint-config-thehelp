@@ -30,7 +30,6 @@ module.exports = {
     'jsx-a11y/img-redundant-alt': 'error',
     'jsx-a11y/interactive-supports-focus': 'error',
     'jsx-a11y/label-has-associated-control': 'error',
-    'jsx-a11y/label-has-for': 'error',
     'jsx-a11y/lang': 'error',
     'jsx-a11y/media-has-caption': 'error',
     'jsx-a11y/mouse-events-have-key-events': 'error',
@@ -41,7 +40,6 @@ module.exports = {
     'jsx-a11y/no-noninteractive-element-interactions': 'error',
     'jsx-a11y/no-noninteractive-element-to-interactive-role': 'error',
     'jsx-a11y/no-noninteractive-tabindex': ['error', { roles: ['tabpanel'] }],
-    'jsx-a11y/no-onchange': 'error',
     'jsx-a11y/no-redundant-roles': ['error', { roles: ['tabpanel'] }],
     'jsx-a11y/no-static-element-interactions': ['error', { handlers: ['onClick', 'onMouseDown', 'onMouseUp', 'onKeyPress', 'onKeyDown', 'onKeyUp'] }],
     'jsx-a11y/onclick-has-focus': 'error',
@@ -85,7 +83,6 @@ module.exports = {
     'react/jsx-sort-default-props': 'off',
     'react/jsx-sort-prop-types': 'off', // alphabetical is too limiting
     'react/jsx-sort-props': 'off', // alphabetical is too limiting
-    'react/jsx-space-before-closing': 'error',
     'react/jsx-tag-spacing': ['error', { beforeSelfClosing: 'always', beforeClosing: 'never' }],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
