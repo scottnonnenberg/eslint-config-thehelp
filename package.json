@@ -21,7 +21,7 @@
     "commitmsg": "validate-commit-msg"
   },
   "peerDependencies": {
-    "@scottnonnenberg/eslint-plugin-thehelp": "^0.3.2",
+    "@scottnonnenberg/eslint-plugin-thehelp": "^0.5.0",
     "eslint": "^8.2.0",
     "eslint-plugin-bdd": "^2.1.1",
     "eslint-plugin-chai-expect": "^3.0.0",
@@ -48,7 +48,7 @@
     "eslint-plugin-react": { "optional": true }
   },
   "devDependencies": {
-    "@scottnonnenberg/eslint-plugin-thehelp": "0.3.2",
+    "@scottnonnenberg/eslint-plugin-thehelp": "0.5.0",
     "eslint": "8.2.0",
     "eslint-find-rules": "4.0.0",
     "eslint-plugin-bdd": "2.1.1",
