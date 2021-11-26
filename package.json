@@ -1,6 +1,6 @@
 {
   "name": "@scottnonnenberg/eslint-config-thehelp",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "The way I write javascript.",
   "main": "core.js",
   "scripts": {

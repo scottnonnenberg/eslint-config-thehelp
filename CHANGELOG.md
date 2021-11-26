@@ -1,6 +1,36 @@
-# Change Log
+# Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.9.0](https://github.com/scottnonnenberg/eslint-config-thehelp/compare/v0.8.0...v0.9.0) (2021-11-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **typescript:** Remove es2015 sub-configuration, remove functional from
+core configuration, enable reportUnusedDisableDirectives, add 'es2020'
+to env.
+* **deps:** Needed dependencies are no longer installed 
+automatically with this package. This package expresses its needs with
+peerDependencies now.
+
+### Features
+
+* **deps:** Move dependencies to peerDependencies ([29b2dec](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/29b2dec089f7e1a43fc3dce3ee041cae50b0fd84))
+* **deps:** Use peerDependenciesMeta to mark all non-core deps optional ([aa7b07e](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/aa7b07e1bcc87a0ce4a83e77824cac8c2d75130d))
+* **prettier:** Two new configs - prettier and prettierReact ([2b4d7db](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/2b4d7db3576c7e618d09bb0e3b5f78c9ab5db2a2))
+* **rules:** A few changes to rules; match export rule now enabled ([656c8d8](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/656c8d8e5d468be1473a4df7093ee992165c1055))
+* **rules:** Add missing rules from all plugins, fix new lint errors ([af4567c](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/af4567cb84f24e864959bc8538d158c3937a7ffa))
+* **rules:** New scripts to find deprecated rules ([7503d14](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/7503d143bc391e1952f85ab808dfaf11774be1c8))
+* **rules:** Remove deprecated rules ([b9a385a](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/b9a385af358772fb78e2bd93b8ab47aae7b69ad8))
+* **rules:** Update to latest @scottnonnenberg/eslint-plugin-thehelp ([2f58adc](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/2f58adcf77bb08670431b0f514aa57f5edc1a2fd))
+* **typescript:** A new set of typescript-specific rules ([fc3959e](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/fc3959e73a230d66ef1ae67cd60e42c392a70145))
+
+
+### Bug Fixes
+
+* **deps:** Fix peerDependencies - need to add stuff to devDependencies ([a16dc01](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/a16dc017392840d5ebc1612d871583abb192a562))
+* **rules:** Fix references to rules from my package ([ede36f0](https://github.com/scottnonnenberg/eslint-config-thehelp/commit/ede36f0f7a89d9c690cf736422061c754e150e6b))
 
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/scottnonnenberg/eslint-config-thehelp/compare/v0.7.0...v0.8.0) (2017-02-17)
