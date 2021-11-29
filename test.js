@@ -12,7 +12,6 @@ module.exports = {
     'max-nested-callbacks': 'off',
     'no-magic-numbers': 'off',
     'no-unused-expressions': 'off',
-    'no-undefined': 'off',
 
     'bdd/focus': 'error',
     'bdd/exclude': 'error',
@@ -21,8 +20,6 @@ module.exports = {
     'chai-expect/no-inner-compare': 'error',
     'chai-expect/no-inner-literal': 'error',
     'chai-expect/terminating-properties': 'error',
-
-    'immutable/no-let': 'off',
 
     'import/no-extraneous-dependencies': 'off',
 

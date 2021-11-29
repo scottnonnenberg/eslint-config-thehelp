@@ -4,8 +4,6 @@ Because the tools can help us write better code. Use this package directly, or f
 
 Blog post announcing this project: https://blog.scottnonnenberg.com/eslint-part-1-exploration/
 
-[![continous integration](https://img.shields.io/circleci/project/scottnonnenberg/eslint-config-thehelp/master.svg?maxAge=3600)](https://circleci.com/gh/scottnonnenberg/eslint-config-thehelp/tree/master) [![npm version](https://img.shields.io/npm/v/@scottnonnenberg/eslint-config-thehelp.svg?maxAge=3600)](https://www.npmjs.com/package/@scottnonnenberg/eslint-config-thehelp) [![license](https://img.shields.io/github/license/scottnonnenberg/eslint-config-thehelp.svg?maxAge=2592000)](https://github.com/scottnonnenberg/eslint-config-thehelp#license)
-
 ## Quickstart
 
 ```bash
@@ -26,17 +24,36 @@ As always, you can override any settings provided in this package in your config
 
 ## Configurations in this project
 
-1. `@scottnonnenberg/thehelp/core` - Basic good javascript practices. Node.js and CommonJS. _Note: does not prevent the use of ES2015 constructs._
-2. `@scottnonnenberg/thehelp/es2015` - Preferring ES2015 constructs over ES5 constructs. `import`/`export` instead of `module.exports`. Will run on on Node.js 6.x without a separate compile step if `export`/`import` are not used (turn off `import/no-commonjs`). Otherwise Babel is required. You'll definitely need Babel for the browser.
-3. `@scottnonnenberg/thehelp/functional` - Eliminating mutation of data and all loops, in favor of functional design.
-4. `@scottnonnenberg/thehelp` (**default**) - the previous three combined into one configuration. Suitable for any node module or server project.
-5. `@scottnonnenberg/thehelp/react` - rules for JSX and React component structure, as well as accessibility.
-6. `@scottnonnenberg/thehelp/scripts` - a looser configuration appropriate for your project's `scripts/` directory. For example, allows use of `devDependencies`.
-7. `@scottnonnenberg/thehelp/test` - a configuration appropriate for your projects `test/` directory, bringing in two new plugins, the `mocha` env, and relaxing a few rules. For example, turns off `immutable/no-let` to allow test setup in `before`/`beforeEach`.
+1. `@scottnonnenberg/thehelp` - Basic good, modern javascript practices. Node.js and CommonJS.
+2. `@scottnonnenberg/thehelp/functional` - Eliminating mutation of data and all loops, in favor of functional design.
+3. `@scottnonnenberg/thehelp/react` - rules for JSX and React component structure, as well as accessibility.
+4. `@scottnonnenberg/thehelp/scripts` - a looser configuration appropriate for your project's `scripts/` directory. For example, allows use of `devDependencies`.
+5. `@scottnonnenberg/thehelp/test` - a configuration appropriate for your projects `test/` directory, bringing in two new plugins, the `mocha` env, and allowing use of `devDependencies`.
+
+[Typescript](https://www.typescriptlang.org/)-specific configuration:
+1. `@scottnonnenberg/typescript` - Because Typescript is what you should be writing, not plain Javascript!
+2. `@scottnonnenberg/testTypescript` - Some rules disabled in `/test` are duplicated by typescript plugin.
+
+[Prettier](https://prettier.io/)-specific configuration, turning off formatting rules that prettier takes care of for you.
+1. `@scottnonnenberg/thehelp/prettier`
+2. `@scottnonnenberg/thehelp/prettierReact`
+3. `@scottnonnenberg/thehelp/prettierTypescript`
+
+## Peer Dependencies
+
+Take a look at [`package.json`](https://github.com/scottnonnenberg/eslint-config-thehelp/blob/main/package.json) for its `peerDependencies` list.
+
+Five dependencies are required.
+
+Optional peer dependencies will need to be installed if you use additional configurations beyond the default:
+- `/react` requires the `react` and `jsx-a11y` plugins.
+- `/test` requires the `bdd` and `chai-expect` plugins
+- `/typescript` requires `typescript`, and `@typescript-eslint` plugin and parser modules.
+- `/functional` requires `immutable` and `no-loops` plugins.
 
 ## Key configuration
 
-To allow `eslint-plugin-import` to do its magic, you will need to tell it where to find your modules. I use this in my project's root directory:
+I've left `@scottnonnenberg/thehelp/absolute-or-current-dir` disabled by default, but I do recommend it! If you enabled it you'll also need to disable 'import/no-internal-modules'. And, to allow `eslint-plugin-import` to do its magic, you will need to tell it where to find your modules. I use this in my project's root directory:
 
 ```javascript
 {
@@ -44,6 +61,10 @@ To allow `eslint-plugin-import` to do its magic, you will need to tell it where 
     'import/resolver': {
       node: {
         paths: [__dirname],
+      },
+      // If using typescript
+      typescript: {
+        project: ['./tsconfig.json'],
       },
     },
   },
@@ -55,22 +76,35 @@ If using `react` config, you can get more precise deprecation warnings by settin
 ```javascript
 {
   react: {
-    version: '15.0',
+    version: '17.0.2',
   },
 }
 ```
 
-## Compatibility
+If using `/typescript` config, the rules enabled need type information. You need to point it to your `tsconfig.json`:
 
-**This project is compatible with `npm` version 3 only.** The goal is to make this a one-stop install for `eslint` and its plugins, but plugin name resolution for `eslint` is hardcoded to the top-level. Installing this with `npm` 3.x will ensure that. `npm` version 2, however, puts this project's dependences underneath it in the directory streucture, making them invisible to the larger project.
+```javascript
+{
+  parserOptions: {
+    project: ['./tsconfig.json'],
+  },
+}
+```
 
-This may change if there is progress on this issue: https://github.com/eslint/eslint/issues/3458
+ESLint can also get really slow when you use typescript linting, because some of the rules need to gather full type information. I would recommend using ESLint's caching option:
 
-_Note: if you have ESLint or any ESLint plugins installed yourself, they will supercede the plugins installed with this project. Check this if you're getting errors, like 'unknown rule.'_
+```json
+{
+  "scripts": {
+    "lint": "eslint . --cache --max-warnings 0 --ext .ts,.tsx",
+    "clean": "rm .eslintcache",
+  }
+}
+```
 
 ## My principles for rules
 
-I want rules to specify the 98% case. `/* eslint-disable [rules] */` and `// eslint-disable-line` will cover the rest. I can periodically search for those exceptions and reconsider their justification.
+I want rules to specify the 98% case. `/* eslint-disable [rules] */` and `// eslint-disable-line` will cover the rest. I can periodically search for those exceptions and reconsider their justification. __Note:__ this configuration enables `reportUnusedDisableDirectives`, which means that your `eslint-disable` clauses will result in warnings if no error was actually prevented.
 
 Next, I believe strongly that all style mandates for a project should have automated tools which verify them. I’ve spent way, way too long talking about style in pull request reviews. Yes, some things can't be verified very easily in an automated fashion. Get creative to implement new verification schemes (write an ESLint plugin!). If you still can't do that, then make as few as possible of these kinds of manual requirements.
 
@@ -83,28 +117,11 @@ Details for this project:
 - All 'off' rules must have a reason mentioned.
 - Configuration should be nothing but 'error' if it matches the default settings for the rule.
 
-## Other notes:
-
-- `consistent-return` rule is incompatible with [`@scottnonnenberg/notate`](https://github.com/scottnonnenberg/notate) and [`thehelp-core`](https://github.com/thehelp/core)'s breadcrumbs
-- I've left `thehelp/absolute-or-current-dir` for you to configure; it is off by default but I do recommend it.
-
 ## Contributing
 
 This project uses [`standard-version`](https://github.com/conventional-changelog/standard-version) to release new versions, automatically updating the version number and [changelog](https://github.com/scottnonnenberg/eslint-config-thehelp/blob/master/CHANGELOG.md) based on commit messages in [standard format](https://github.com/bcoe/conventional-changelog-standard/blob/master/convention.md). [`husky`](https://github.com/typicode/husky) and [`validate-commit-msg`](https://github.com/kentcdodds/validate-commit-msg) are used to ensure all commit messages match the expected format (see [package.json](https://github.com/scottnonnenberg/eslint-config-thehelp/blob/master/package.json) for the configuration details).
 
 It takes some getting used to, but this configuration is absolutely worthwhile. A changelog is way easier to understand than the chaos of a raw commit stream, especially with `standard-version` providing direct links to bugs, commits and [commit ranges](https://github.com/scottnonnenberg/eslint-config-thehelp/compare/v0.6.0...v0.6.1).
-
-## TODO:
-
-- Re-enable `no-useless-rename` when https://github.com/eslint/eslint/issues/6266 is fixed for `babel-eslint`
-- Turn on `filenames/match-exports` as soon as a build is released with this PR: https://github.com/selaux/eslint-plugin-filenames/pull/9
-- Update to new `imports` plugin when released, has fix for `prefer-default-export` bug: https://github.com/benmosher/eslint-plugin-import/blob/master/CHANGELOG.md
-- new `pure` configuration?
-  - `pure/pure` - https://github.com/purely-functional/eslint-plugin-pure
-  - new rule(s): check for lodash mutating functions
-  - new rule: check for `assign()` with something other than `{}` first parameter
-  - `better/no-delete` - https://github.com/idmitriev/eslint-plugin-better
-- `thehelp/no-array-mutation` fires for `reverse()` in lodash chain context. Though, to be fair, `_.reverse()` does mutate the underlying array. Also interesting that `router.push()` fires it.
 
 ## License
 
